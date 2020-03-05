@@ -1,0 +1,60 @@
+.sign_p{
+  width: 1000px;
+  margin: 0 auto;
+  background: #F0FFFF;
+  a{
+    color:black;
+  }
+  h2{
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+  }
+  &_form{
+    max-width: 320px;
+    margin: 0 auto;
+    .field{
+      margin-bottom: 30px;
+      span{
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+      background-color: red;
+      }
+      input{
+      width: 100%;
+      margin: 8px 0 0;
+      line-height: 50px;
+      font-size: 20px;
+      }
+      &_name{
+        display: flex;
+        justify-content: space-between;
+        input{
+          width: 150px;
+        }
+      }
+      &_under-birthday{
+        display: flex;
+        justify-content: space-between;
+        p{
+          padding-top: 3px;
+        }
+      }
+    }
+  }
+  .actions{
+    text-align: center;
+    input{
+      width: 100%;
+      background: #3CCACE;
+      color: white;
+      line-height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
