@@ -162,7 +162,7 @@
 - has_many :buyers
 - has_many :comments
 - has_many :favorities
-- has_many :item_imgs
+- has_many :item_images
 
 
 
@@ -245,10 +245,10 @@
 - has_many :items
 
 
-## item_imgssテーブル
+## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_img|string|null: false|
+|item_image|string|null: false|
 
 ### Association
-- has_many :items
+- belongs_to :item
