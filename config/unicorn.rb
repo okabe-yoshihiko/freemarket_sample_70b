@@ -5,17 +5,11 @@ worker_processes 1
 
 working_directory "#{app_path}/current"
 
-pid "#{app_path}/shared/tmp/pids/unicorn.pid"
-
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
-
-#エラーのログを記録するファイルを指定
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
-
-#通常のログを記録するファイルを指定
 stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
-#Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
 
 #以下は応用的な設定なので説明は割愛
