@@ -7,23 +7,21 @@
   margin: 0 auto;
   position: relative;
   background-color: #f8f8f8;
-
   .item-box {
     background-color: #ffffff;
     padding: 24px 40px 40px;
     width: 700px;
     height: 1350px;
     margin: 0 auto;
-    .item-box__name {
+    &__name {
       text-align: center;
       font-weight: bold;
       font-size: 24px;
     }
-    .item-box__content {
+    &__content {
       margin: 16px 0px 0px;
       .content-area {
-        .content-area__main {
-          width: 100%;
+        &__main {
           display: flex;
           justify-content: center;
           .show-item__main {
@@ -40,23 +38,23 @@
         }
       }
     }
-    .item-box__price {
+    &__price {
       margin: 24px 0px 24px 0px;
-      .item-box__price__int {
+      &__int {
         text-align: center;
         font-size: 46px;
         font-weight: bold;
       }
-      .item-box__price__complement {
+      &__complement {
         text-align: center;
       }
     }
-    .item-box__detail {
+    &__detail {
       font-size: 18px;
       margin-bottom: 30px;
       line-height: 1.5;
     }
-    .item-box__table {
+    &__table {
       margin: 0px auto 20px 25px;
       tbody {
         width: 100%;
@@ -79,7 +77,7 @@
         }
       }
     }
-    .item-box__options {
+    &__options {
       display: flex;
       justify-content: space-between;
       .like-btn {
@@ -126,7 +124,7 @@
       color: #ffffff;
     }
   }
-  ul {
+  .itemslink{
     width: 700px;
     margin: 0 auto;
     display: flex;
