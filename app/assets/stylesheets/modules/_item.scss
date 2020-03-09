@@ -22,7 +22,6 @@
     padding: 15px 0 0;
     margin: 0 auto;
     height: 100px;
-    // display: flex;
     &-main{
       display: flex;
       h1{
@@ -92,14 +91,14 @@
     height: 560px;
     max-width: 100%;
     background-image: url("large.jpg");
-    // background-color: #272727;
     background-size: cover;
     background-repeat: no-repeat;
     background-position:top center ;
     position: relative;
     color: white;
     padding: 0 60px;
-    // align-items: center; これが動きませぬ
+    display: flex;
+    align-items: center; 
     &-content{
      width: 744px;
      height: 336px;
@@ -128,8 +127,8 @@
     background-size: cover;
     background-position: bottom right;
     color: white;
-    // display: flex; 動きませぬ
-    // align-items: center; 動かない
+    display: flex; 
+    align-items: center; 
     &-content{
       text-shadow:0 0 5px rgba(0, 0, 0, 0.4);
       h2.main__visual2-content__sub{
