@@ -2,15 +2,15 @@
   .header__box
     .header__box-main
       %h1.icon
-        %a{:href => "/"}
-          %img{:alt => "FURIMA",:height => "40px",:src => "assets/logo.png" , :width => "140px"}/
+        = link_to "/" do
+          = image_tag 'logo.png', height:'40px', width:'140px'
       .header__box-main__searchBox
-        %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
-          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-          %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す",:height => "36px",:width =>"575px"}/
-          %button{:type => "submit"}
+        %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+          %input{name: "utf8", type: "hidden", value: "✓"}/
+          %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す",height: "36px",width: "575px"}/
+          %button{type: "submit"}
             .searchBox__icon
-              %img{alt: "FURIMA",height: "20px",src: "assets/icon-search 1.png" , width: "20px"}/
+              = image_tag 'icon-search 1.png', height:'20px', width:'20px'
     .header__box-bottom
       %ul.listsleft
         %li.listsleft__item--first

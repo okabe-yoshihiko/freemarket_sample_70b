@@ -28,7 +28,7 @@
       h1{
         width: 140px;
         margin-right: 30px;
-        // padding-bottom: 10px; ちょっと保留箇所
+        padding-bottom: 10px; 
       }
       &__searchBox{
         width: calc(100% - 140px);
@@ -319,7 +319,6 @@
               width: 100%;
               ul.price__comment{
                 justify-content: space-around;
-                
                 width: 100%;
                 li.price__comment{
                   display: flex;
@@ -342,7 +341,6 @@
   width: 100%;
   height: 360px;
   background-color:#272727;
-  // font-size: 12px;
   color: #ffffff;
   // bottom: 0;
   text-align: center;
@@ -363,22 +361,20 @@
       ul.content{
         font-size: 12px;
         text-decoration: none;
-  //       line-height: 32px;
-  //       color: #fff;
+        // line-height: 32px;
+        // color: #fff;
       li.content__list{
-
-          color: #fff;
-          text-decoration: none;
-          font-size: 12px;
-          line-height: 32px;
-        
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 32px;
       }
       }
      }
   }
-  // p{
-  //   font-size: 14px;
-  // }
+  p{
+    font-size: 14px;
+  }
 }
 
 
