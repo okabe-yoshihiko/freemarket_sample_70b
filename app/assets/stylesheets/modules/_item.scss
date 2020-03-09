@@ -1,6 +1,3 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 * {
   box-sizing: border-box;
 }
@@ -134,7 +131,6 @@
       h2.main__visual2-content__sub{
         font-size: 27px;
         font-weight: bold;
-        // text-align: center;
       }
       p.content__text{
         font-size: 18px;
@@ -360,8 +356,6 @@
       ul.content{
         font-size: 12px;
         text-decoration: none;
-        // line-height: 32px;
-        // color: #fff;
       li.content__list{
         color: #fff;
         text-decoration: none;
