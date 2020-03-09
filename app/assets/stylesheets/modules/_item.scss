@@ -91,7 +91,8 @@
   &__visual{
     height: 560px;
     max-width: 100%;
-    background-image: url(bg-mainVisual-pict_pc.jpg);
+    background-image: url("large.jpg");
+    // background-color: #272727;
     background-size: cover;
     background-repeat: no-repeat;
     background-position:top center ;
@@ -217,7 +218,7 @@
     transform: translateX(-50%);
     }
   }
-  ul{
+  ul.lists{
     text-align: center;
     display: flex;
     max-width: 1020px;
@@ -313,6 +314,18 @@
             }
             .price{
               font-size: 16px;
+              display: flex;
+              justify-content: space-around;
+              width: 100%;
+              ul.price__comment{
+                justify-content: space-around;
+                
+                width: 100%;
+                li.price__comment{
+                  display: flex;
+                  width: 100%;
+                }
+              }
             }
           }
          }
@@ -329,15 +342,15 @@
   width: 100%;
   height: 360px;
   background-color:#272727;
-  font-size: 12px;
+  // font-size: 12px;
   color: #ffffff;
   // bottom: 0;
   text-align: center;
   ul.footer__contents{
-    max-width: 840px;
-    margin: 0 auto;
-    display: flex;
-    li.contents{
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      li.contents{
       display: flex;
       flex-direction: column;
       width: calc(1/3 * 100%);
@@ -346,30 +359,26 @@
         margin: 0 0 20px;
         font-size: 16px;
         font-weight: bold;
+      }
       ul.content{
         font-size: 12px;
         text-decoration: none;
-        line-height: 32px;
-        color: #fff;
-        li{
-           color: #fff;
-           text-decoration: none;
-           font-size: 12px;
-           line-height: 32px;
-          a{
-           color: #fff;
-           text-decoration: none;
-           font-size: 12px;
-           line-height: 32px;
-          }
-        }
+  //       line-height: 32px;
+  //       color: #fff;
+      li.content__list{
+
+          color: #fff;
+          text-decoration: none;
+          font-size: 12px;
+          line-height: 32px;
+        
       }
       }
-    }
+     }
   }
-  p{
-    font-size: 14px;
-  }
+  // p{
+  //   font-size: 14px;
+  // }
 }
 
 
