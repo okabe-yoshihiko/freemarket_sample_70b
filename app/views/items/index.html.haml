@@ -1,10 +1,7 @@
-.wrapper
-  = render "header"
-  = render "main"
-  = render "footer"
+= render "main"
 
 
-  = link_to "/" do
-    .Exhibitionbtn
-      %span.Exhibitionbtn__text 出品する
-      = image_tag 'icon_camera.png', height:'54px', width:'54px'
+= link_to "/" do
+  .Exhibitionbtn
+    %span.Exhibitionbtn__text 出品する
+    = image_tag 'icon_camera.png', height:'54px', width:'54px'
