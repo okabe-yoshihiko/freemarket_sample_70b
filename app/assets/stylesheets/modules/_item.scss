@@ -126,6 +126,7 @@
     align-items: center; 
     &-content{
       text-shadow:0 0 5px rgba(0, 0, 0, 0.4);
+      margin-left: 100px;
       h2.main__visual2-content__sub{
         font-size: 27px;
         font-weight: bold;
@@ -383,4 +384,7 @@
     text-decoration: none;
     margin-bottom: 5px;
   }
+}
+.appimage{
+  margin-top:15px;
 }

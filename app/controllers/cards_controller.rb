@@ -8,6 +8,7 @@ class CardsController < ApplicationController
   end
 
   def create #PayjpとCardのデータベースを作成
+    binding.pry
     Payjp.api_key = Rails.application.credentials.payjp[:secret_access_key]
 
     if params['payjp-token'].blank?
