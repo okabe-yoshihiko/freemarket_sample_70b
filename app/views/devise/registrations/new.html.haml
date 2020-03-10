@@ -4,11 +4,11 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .sign_p_form
-        .field
-          = f.label :ニックネーム
-          %span 必須
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   = f.label :ニックネーム
+        -#   %span 必須
+        -#   %br/
+        -#   = f.email_field :email, autofocus: true, autocomplete: "email"
         .field
           = f.label :メールアドレス 
           %span 必須
@@ -34,71 +34,71 @@
             = f.label :お名前（全角）
             %span 必須
             %br/
-          .field_name
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          .field_topname
-            = f.label :お名前カナ（全角）
-            %span 必須
-            %br/
-          .field_name
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          .field_top-birhday
-            = f.label :生年月日
-            %span 必須
-            %br/
-          .field_under-birthday
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            %p 年
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            %p 月
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            %p 日
-        .text
-          %h3 商品送付先住所の登録
-          %p 安心・安全にご利用いただくために、商品送付先住所の登録にご協力ください。他のお客さまに公開されることはありません。
-        .field
-          .field_topname
-            = f.label :商品送付先のお名前（全角）
-            %span 必須
-            %br/
-          .field_name
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          .field_topname
-            = f.label :商品送付先のお名前カナ（全角）
-            %span 必須
-            %br/
-          .field_name
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          = f.label :郵便番号
-          %span 必須
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          = f.label :都道府県
-          %span 必須
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          = f.label :市区町村
-          %span 必須
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          = f.label :マンション名、ビル名、部屋番号
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
-        .field
-          = f.label :お届け先の電話番号
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#   .field_name
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   .field_topname
+        -#     = f.label :お名前カナ（全角）
+        -#     %span 必須
+        -#     %br/
+        -#   .field_name
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   .field_top-birhday
+        -#     = f.label :生年月日
+        -#     %span 必須
+        -#     %br/
+        -#   .field_under-birthday
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     %p 年
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     %p 月
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     %p 日
+        -# .text
+        -#   %h3 商品送付先住所の登録
+        -#   %p 安心・安全にご利用いただくために、商品送付先住所の登録にご協力ください。他のお客さまに公開されることはありません。
+        -# .field
+        -#   .field_topname
+        -#     = f.label :商品送付先のお名前（全角）
+        -#     %span 必須
+        -#     %br/
+        -#   .field_name
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   .field_topname
+        -#     = f.label :商品送付先のお名前カナ（全角）
+        -#     %span 必須
+        -#     %br/
+        -#   .field_name
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   = f.label :郵便番号
+        -#   %span 必須
+        -#   %br/
+        -#   = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   = f.label :都道府県
+        -#   %span 必須
+        -#   %br/
+        -#   = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   = f.label :市区町村
+        -#   %span 必須
+        -#   %br/
+        -#   = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   = f.label :マンション名、ビル名、部屋番号
+        -#   %br/
+        -#   = f.email_field :email, autofocus: true, autocomplete: "email"
+        -# .field
+        -#   = f.label :お届け先の電話番号
+        -#   %br/
+        -#   = f.email_field :email, autofocus: true, autocomplete: "email"
         .actions
           = f.submit "登録"
       -# = render "devise/shared/links"

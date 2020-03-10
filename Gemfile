@@ -71,4 +71,6 @@ group :production do
   gem 'unicorn', '5.4.1'
   gem 'fog-aws'
 end
-
+gem 'font-awesome-sass'
+gem 'payjp'
+gem 'pry-rails'
