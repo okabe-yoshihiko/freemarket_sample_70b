@@ -72,4 +72,5 @@ group :production do
   gem 'fog-aws'
 end
 gem 'font-awesome-sass'
-
+gem 'payjp'
+gem 'pry-rails'

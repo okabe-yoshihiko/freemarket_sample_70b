@@ -1,0 +1,71 @@
+.mypage
+  .mypage__side
+    %li.pages
+      = link_to 'マイページ', user_path,class:"mypagelink" 
+    %li.pages
+      = link_to 'お知らせ', "#",class:"mypagelink" 
+    %li.pages
+      = link_to 'いいね一覧', "#",class:"mypagelink" 
+    %li.pages
+      = link_to '出品する', "#",class:"mypagelink" 
+    %li.pages
+      = link_to '出品した商品-出品中', "#",class:"mypagelink" 
+    %li.pages
+      = link_to '出品した商品-取引中', "#",class:"mypagelink"
+    %li.pages
+      = link_to '出品した商品-過去の取引', "#",class:"mypagelink"
+    %li.pages
+      = link_to '評価一覧', "#",class:"mypagelink"
+    %li.pages
+      = link_to 'ガイド', "#",class:"mypagelink"
+    %li.pages
+      = link_to 'ニュース', "#",class:"mypagelink"
+    %li.pages
+      = link_to 'お問い合わせ', "#",class:"mypagelink"
+    %h3.nav-head 設定
+    %li.pages
+      = link_to 'プロフィール', "#",class:"mypagelink"
+    %li.pages
+      = link_to '発送元・お届け先住所変更', "#",class:"mypagelink"
+    %li.pages
+      = link_to 'カード情報登録/変更',new_card_path,class:"mypagelink"
+    %li.pages
+      = link_to 'メール/パスワード', "#",class:"mypagelink"
+    %li.pages
+      = link_to '本人情報', "#",class:"mypagelink"
+    %li.pages
+      = link_to '電話番号の確認', "#",class:"mypagelink"
+    %li.pages
+      =link_to "ログアウト", destroy_user_session_path, method: :delete,class:"mypagelink"
+  .mypage__main
+    .mypage__main__top-cat
+      .mypage__main__top-cat__top
+        .user-icon
+        .user-name
+          = link_to 'NAME', "#",class:"user-title"
+        .user-score
+          %h5.evalutation 評価26
+          %h5.exhibition 出品23
+    .score-face
+      = icon('far', 'laugh',class:'good')
+      122
+      = icon('far', 'meh',class:'normal')
+      133
+      = icon('far', 'frown',class:'bad')
+      14
+    .mypage__main__profile
+      aaa初めましてあああああああああああああああああああああああああああああああ
+    .links-icon
+      = icon('fab', 'twitter-square',class:'links-icon__twitter')
+      = icon('fab', 'line',class:'links-icon__line')
+      = icon('fab', 'facebook-square',class:'links-icon__facebook')
+    %h3 この出品者の商品
+    .product-contents
+      .product-content__box
+        .product-contents__box__image1
+        %h5 焼売美味いで
+        %h5 40000円
+      .product-content__box
+        .product-contents__box__image2
+        %h5 マスク品薄
+        %h5 8000000000円
