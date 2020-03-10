@@ -3,9 +3,8 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:new, :delete, :show]
 
   def new
-    if @card.present?
-      redirect_to card_path(id: @card.user_id)
-    end
+   redirect_to card_path(id: @card.user_id) if @card.present?
+
   end
 
   def create #PayjpとCardのデータベースを作成
@@ -41,8 +40,7 @@ class CardsController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    if @card.blank?
-    else
+    unless @card.blank?
       Payjp.api_key = Rails.application.credentials.payjp[:secret_access_key]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
