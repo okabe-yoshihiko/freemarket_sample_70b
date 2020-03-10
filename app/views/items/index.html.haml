@@ -1,12 +1,10 @@
-%h1　トップページ
-- if user_signed_in?
-  %p
-    ログインしています
-  =link_to "ログアウト", destroy_user_session_path, method: :delete
-- else
-  %p
-    ログインしていません
-    %li
-      =link_to "新規会員登録", new_user_registration_path, method: :get
-    %li
-      =link_to "ログイン", new_user_session_path, method: :get
+.wrapper
+  = render "header"
+  = render "main"
+  = render "footer"
+
+
+  = link_to "/" do
+    .Exhibitionbtn
+      %span.Exhibitionbtn__text 出品する
+      = image_tag 'icon_camera.png', height:'54px', width:'54px'
