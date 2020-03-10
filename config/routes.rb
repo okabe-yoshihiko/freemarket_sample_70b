@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items, only: [:index, :show, :confirm ]
   resources :users
-  resources :cards, only: [:new, :create, :show] do
+  resources :cards, only: [:new, :show] do
     collection do
-      post 'create', to: 'cards#create'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end
   end

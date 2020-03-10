@@ -74,3 +74,5 @@ end
 gem 'font-awesome-sass'
 gem 'payjp'
 gem 'pry-rails'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
