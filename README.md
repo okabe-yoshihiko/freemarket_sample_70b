@@ -58,13 +58,10 @@
 
 
 
-## credit_cardsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|expiration_year|integer|null: false|
-|expiration_month|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
