@@ -1,0 +1,217 @@
+.exhibition-main
+  .exhibition-box
+    .exhibition-box__header 
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          出品画像
+          %span.red  必須
+        %p.name__pict--text
+          最大10枚までアップロードできます
+        
+        .post__drop__box__container
+          
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %label{for: "img-file"}
+              %input.file{:name => "example1", :type => "file",:class => "file"}/
+              %pre.label-box__text-visible ドラッグアンドドロップまたはクリックしてファイルをアップロード
+          .prev-content
+          .label-content
+            
+            
+    %hr.style__ber/
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          商品名
+          %span.red  必須
+        %p.name__pict--text
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %input{name: "utf8", type: "hidden", value: "✓"}/
+            %input#searchInput.searchBox--input{name: "key", placeholder: "40字まで",height: "36px",width: "575px"}/
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          商品の説明
+          %span.red  必須
+        %p.name__pict--text
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %input{name: "utf8", type: "hidden", value: "✓"}/
+            %p
+              %textarea{:cols => "30", :name => "msg", :rows => "10" ,:placeholder => "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷"}
+            
+    %hr.style__ber/
+    .exhibition-box__pict
+      %p.exhibition-box
+        商品の詳細
+      .exhibition-box__pict--box
+        .name__pict
+          カテゴリー
+          %span.red  必須
+        %p.select
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %p
+              %select{:name => "select"} 
+                %option{:value => "サンプル"} 選択してください
+                %option{:value => "サンプル1"} レディース
+                %option{:value => "サンプル2"} メンズ
+                %option{:value => "サンプル3"} ベビー・キッズ
+                %option{:value => "サンプル4"} インテリア・住まい・小物
+                %option{:value => "サンプル5"} 本・音楽・ゲーム
+                %option{:value => "サンプル6"} おもちゃ・ホビー・グッズ
+                %option{:value => "サンプル6"} コスメ・香水・美容
+                %option{:value => "サンプル6"} 家電・スマホ・カメラ
+                %option{:value => "サンプル6"} スポーツ・レジャー
+                %option{:value => "サンプル6"} ハンドメイド
+                %option{:value => "サンプル6"} チケット
+                %option{:value => "サンプル6"} 自動車・オートバイ
+                %option{:value => "サンプル6"} その他
+
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          ブランド
+          %span.gray  任意
+        %p.name__pict--text
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %input{name: "utf8", type: "hidden", value: "✓"}/
+            %input#searchInput.searchBox--input{name: "key", placeholder: "例)　シャネル",height: "36px",width: "575px"}/
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          商品の状態
+          %span.red  必須
+        %p.select
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %p
+              %select{:name => "select"}
+                %option{:value => "サンプル"} 選択してください
+                %option{:value => "サンプル1"} 新品、未使用
+                %option{:value => "サンプル2"} 未使用に近い
+                %option{:value => "サンプル3"} 目立った傷や汚れなし
+                %option{:value => "サンプル4"} やや傷や汚れあり
+                %option{:value => "サンプル5"} 傷や汚れあり
+                %option{:value => "サンプル6"} 全体的に状態が悪い
+
+    %hr.style__ber/
+    .exhibition-box__pict
+      %p.exhibition-box
+        配送について
+      .exhibition-box__pict--box
+        .name__pict
+          配送料の負担
+          %span.red  必須
+        %p.select
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %p
+              %select{:name => "select"}
+                %option{:value => "サンプル"} 選択してください
+                %option{:value => "サンプル1"} 送料込み（出品者負担）
+                %option{:value => "サンプル2"} 着払い（購入者負担）
+        
+
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          発送元の地域
+          %span.red  必須
+        %p.select
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %p
+              %select{:name => "select"}
+                %option{:value => "サンプル"} 選択してください
+                %option{:value => "サンプル1"}北海道
+                %option{:value => "サンプル1"}青森県
+                %option{:value => "サンプル1"}岩手県
+                %option{:value => "サンプル1"}宮城県
+                %option{:value => "サンプル1"}秋田県
+                %option{:value => "サンプル1"}山形県
+                %option{:value => "サンプル1"}福島県
+                %option{:value => "サンプル1"}茨城県
+                %option{:value => "サンプル1"}栃木県
+                %option{:value => "サンプル1"}群馬県
+                %option{:value => "サンプル1"}埼玉県
+                %option{:value => "サンプル1"}千葉県
+                %option{:value => "サンプル1"}東京都
+                %option{:value => "サンプル1"}神奈川県
+                %option{:value => "サンプル1"}新潟県
+                %option{:value => "サンプル1"}富山県
+                %option{:value => "サンプル1"}石川県
+                %option{:value => "サンプル1"}福井県
+                %option{:value => "サンプル1"}山梨県
+                %option{:value => "サンプル1"}長野県
+                %option{:value => "サンプル1"}岐阜県
+                %option{:value => "サンプル1"}静岡県
+                %option{:value => "サンプル1"}愛知県
+                %option{:value => "サンプル1"}三重県
+                %option{:value => "サンプル1"}滋賀県
+                %option{:value => "サンプル1"}京都府
+                %option{:value => "サンプル1"}大阪府
+                %option{:value => "サンプル1"}兵庫県
+                %option{:value => "サンプル1"}奈良県
+                %option{:value => "サンプル1"}和歌山県
+                %option{:value => "サンプル1"}鳥取県
+                %option{:value => "サンプル1"}島根県
+                %option{:value => "サンプル1"}岡山県
+                %option{:value => "サンプル1"}広島県
+                %option{:value => "サンプル1"}山口県
+                %option{:value => "サンプル1"}徳島県
+                %option{:value => "サンプル1"}香川県
+                %option{:value => "サンプル1"}愛媛県
+                %option{:value => "サンプル1"}高知県
+                %option{:value => "サンプル1"}福岡県
+                %option{:value => "サンプル1"}佐賀県
+                %option{:value => "サンプル1"}長崎県
+                %option{:value => "サンプル1"}熊本県
+                %option{:value => "サンプル1"}大分県
+                %option{:value => "サンプル1"}宮崎県
+                %option{:value => "サンプル1"}鹿児島県
+                %option{:value => "サンプル1"}沖縄県
+
+    .exhibition-box__pict
+      .exhibition-box__pict--box
+        .name__pict
+          発送までの日数
+          %span.red  必須
+        %p.select
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %p
+              %select{:name => "select"}
+                %option{:value => "サンプル"} 選択してください
+                %option{:value => "サンプル1"} 1~2日で発送
+                %option{:value => "サンプル2"} 2~3日で発送
+                %option{:value => "サンプル2"} 4~7日で発送
+        
+
+    %hr.style__ber/
+    .exhibition-box__pict
+      %p.exhibition-box
+        価格（¥300~9,999,999）
+      .exhibition-box__pict--box
+        .name__pict
+          販売価格
+          %span.red  必須
+        %p.name__pict--text
+          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+            %input{name: "utf8", type: "hidden", value: "✓"}/
+            ¥
+            %input#searchInput.searchBox--input{name: "key", placeholder: "0",height: "36px",width: "575px"}/
+        .name__pict--price
+          販売手数料(10%)
+          %span.price{"data-test" => "fee-value"} —
+        %hr.style__ber/
+        .name__pict--price
+          販売利益
+          %span.price{"data-test" => "fee-value"} —
+        %p.up
+          %input.up{:type => "submit", :value => "出品する"}/
+        %p.back
+          = link_to "/" do
+            もどる
+        %p.note__text
+          禁止されている行為及び出品物を必ずご確認ください。偽ブランド品や盗作物などの販売は犯罪であり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+
+
+
+
+
