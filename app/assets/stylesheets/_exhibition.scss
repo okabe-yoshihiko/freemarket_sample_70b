@@ -18,7 +18,7 @@
       padding: 32px;
     }
     &__pict{
-      // height: 220px;
+      
       width: 620px;
       margin: 0 auto;
       padding: 40px;
@@ -38,7 +38,6 @@
         background-color: rgb(245, 245, 245);
         cursor: pointer;
         display: flex;
-        // height: 100%;
         flex-wrap: wrap;
         -webkit-box-pack: center;
         justify-content: center;
@@ -78,7 +77,6 @@
     margin: 0;
     outline: none;
     padding: 0 16px;
-    // width: inherit;
   }
   span.red{
     background-color:#3CCACE;
@@ -106,9 +104,6 @@
     color: #fff;
     margin-bottom: 32px;
     width: 430px;
-    // width: 80%;
-    // margin: 0 auto;
-    // max-width: 500px;
     
   }
   }
@@ -131,7 +126,6 @@
     border-color: transparent;
     color: #222;
     font-weight: 600;
-    // width: 360px;
     text-align: center;
     width: 80%;
     margin: 0 auto;
@@ -161,7 +155,6 @@
   }
   .exhibition-bottom--text{
     text-align: center;
-    // justify-content: space-around; 動きませぬ
     font-size: 12px;
     a{
       text-decoration: none;
