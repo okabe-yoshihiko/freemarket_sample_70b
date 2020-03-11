@@ -87,6 +87,7 @@
   &__visual{
     height: 560px;
     max-width: 100%;
+    // background-image: image-url("large.jpg");
     background-image: url("large.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -111,15 +112,13 @@
     .main__visual-content__btn{
      display: flex;
      margin: 24px 0 0 0;
-     a{
-
-     }
     }
     }
   }
   &__visual2{
     height: 400px;
     max-width: 100%;
+    // background-image: image-url(bg-topMiddleDl-pict.jpg);
     background-image: url(bg-topMiddleDl-pict.jpg);
     background-size: cover;
     background-position: bottom right;
@@ -144,6 +143,7 @@
   &__visual3{
     height: 360px;
     max-width: 100%;
+    // background-image: image-url(bg-appBanner-pict.jpg);
     background-image: url(bg-appBanner-pict.jpg);
     background-size: cover;
     background-position: center;
@@ -283,7 +283,6 @@
        &__box{
          width: 220px;
          display: inline-block;
-         float: left;
          a{
            text-decoration: none;
            position: relative;
