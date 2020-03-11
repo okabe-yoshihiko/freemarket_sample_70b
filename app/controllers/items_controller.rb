@@ -4,4 +4,10 @@ class ItemsController < ApplicationController
 
   def show
   end
+
+  def confirm
+  end
+
+  def new
+  end
 end

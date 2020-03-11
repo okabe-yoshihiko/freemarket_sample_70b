@@ -1,0 +1,203 @@
+.main
+  %section.main__visual 
+    -# 一個目ブロック
+    .main__visual-content
+      %h2.main__visual-content__sub
+        人生を変えるフリマアプリ
+        %p.content__text
+          FURIMAはだれでもかんたんに出品・購入できる
+          %br
+          フリマアプリです
+      .main__visual-content__btn
+        = link_to "/" do
+          = image_tag 'btn_appstore_01.png', height:'68px',class:'appimage'
+        = link_to "/" do
+          = image_tag 'badge-google-play.png', height:'100px'
+  %section.main__box1
+    -# 二個目ブロック
+    %h2.main__box__subtitle
+      FURIMAが選ばれる3つの理由
+    %ul.lists
+      %li.list
+        .list__pict
+          %span.number 1
+          = image_tag 'pict-reason-01.jpg', height:'247px', width:'247px'
+        %h3.list__text
+          %span  3分
+          ですぐに出品
+        %p.list__text2
+          スマホで入力するだけで簡単に出品できる
+      %li.list__second
+        .list__pict
+          %span.number 2
+          = image_tag 'pict-reason-02.jpg', height:'247px', width:'247px'
+        %h3.list__text
+          %span  シンプル
+          で使いやすい
+        %p.list__text2
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list__last
+        .list__pict
+          %span.number 3
+          = image_tag 'pict-reason-03.jpg', height:'247px', width:'247px'
+        %h3.list__text
+          手数料　
+          %span 業界最安
+        %p.list__text2
+          最大3%でお得に出品＆購入！  
+    
+
+
+  %section.main__visual2
+    -# 3個目ブロック
+    .main__visual2-content
+      %h2.main__visual2-content__sub
+        会員数日本一位
+      %p.content__text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        欲しかったあの商品に出会えるかもしれません。
+      .main__visual2-content__btn
+        = link_to "/" do
+          = image_tag 'btn_appstore_01.png', height:'68px',class:'appimage'
+        = link_to "/" do
+          = image_tag 'badge-google-play.png', height:'100px'
+  %section.main__box2
+    -# 4個目ブロック
+    %h2.main__box__subtitle
+      FURIMAの特徴
+    .main__box2__items
+      %section.items
+        = image_tag 'icon-01.png', height:'195px', width:'127px'
+        %h3.items__subtitle
+          簡単に売り買いできる
+        %p.items__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.items
+        = image_tag 'icon-03.png', height:'195px', width:'127px'
+        %h3.items__subtitle
+          売上金は即日振込みに対応
+        %p.items__detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      %section.items
+        = image_tag 'icon-04.png', height:'195px', width:'127px'
+        %h3.items__subtitle
+          様々な支払いに対応
+        %p.items__detail
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    
+  %section.main__pickup
+    -# 5個目のブロック
+    %h2.main__pickup__subtitle
+      ピックアップカテゴリー
+    .main__pickup__box
+      .main__pickup__box--head
+        = link_to "/" do
+          %h3.title
+            新規投稿商品
+      .main__pickup__box--lists
+        .main__pickup__box--lists__box
+          = link_to "/items/show" do
+            %figure.main__pickup__box--lists__box--img
+              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+            .main__pickup__box--lists__box__body
+              %h3.name
+                犬1
+              .price
+                %ul.price__comment
+                  %li.price__comment
+                    500000円
+                  %li.price__comment
+                    %i.fa.fa-star.LikeIcon
+                    0
+        .main__pickup__box--lists__box
+          = link_to "/items/show" do
+            %figure.main__pickup__box--lists__box--img
+              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+            .main__pickup__box--lists__box__body
+              %h3.name
+                犬2
+              .price
+                %ul.price__comment
+                  %li.price__comment
+                    3000000円
+                  %li.price__comment
+                    %i.fa.fa-star.LikeIcon
+                    0
+        .main__pickup__box--lists__box
+          = link_to "/items/show" do
+            %figure.main__pickup__box--lists__box--img
+              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+            .main__pickup__box--lists__box__body
+              %h3.name
+                犬3
+              .price
+                %ul.price__comment
+                  %li.price__comment
+                    3000000円
+                  %li.price__comment
+                    
+                    %i.fa.fa-star.LikeIcon
+                    0
+      .main__pickup__box--lists
+        .main__pickup__box--lists__box
+          = link_to "/items/show" do
+            %figure.main__pickup__box--lists__box--img
+              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+            .main__pickup__box--lists__box__body
+              %h3.name
+                犬4
+              .price
+                %ul.price__comment
+                  %li.price__comment
+                    3000000円
+                  %li.price__comment
+                    
+                    %i.fa.fa-star.LikeIcon
+                    0
+        .main__pickup__box--lists__box
+          = link_to "/items/show" do
+            %figure.main__pickup__box--lists__box--img
+              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+            .main__pickup__box--lists__box__body
+              %h3.name
+                犬5
+              .price
+                %ul.price__comment
+                  %li.price__comment
+                    3000円
+                  %li.price__comment
+                    
+                    %i.fa.fa-star.LikeIcon
+                    0
+        .main__pickup__box--lists__box
+          = link_to "/items/show" do
+            %figure.main__pickup__box--lists__box--img
+              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+            .main__pickup__box--lists__box__body
+              %h3.name
+                犬6
+              .price
+                %ul.price__comment
+                  %li.price__comment
+                    %p 300円
+                  %li.price__comment
+                    %i.fa.fa-star.LikeIcon
+                    0
+                    
+
+  %section.main__visual3
+    -# 6個目ブロック
+    .main__visual3-content
+      %h2.main__visual3-content__sub
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.content__text
+        今すぐ無料ダウンロード!
+      .main__visual3-content__icon
+        = link_to "/" do
+          = image_tag 'btn_appstore_01.png', height:'68px',class:'appimage'
+        = link_to "/" do
+          = image_tag 'badge-google-play.png', height:'100px'
+          
