@@ -217,9 +217,13 @@
 |Column|Type|Options|
 |------|----|-------|
 |category|string|null: false|
+|ancestry|string|multiple_key: true|
 
 ### Association
 - has_many :items
+- has_one :category_size
+- has_one :size, through: :category_size
+- has_ancestry
 
 
 
@@ -232,6 +236,17 @@
 - has_many :items
 
 
+## categories_sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|integer|null: false, foreign_key: true|
+|size|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :category
+- belongs_to :size
+
+
 
 ## sizesテーブル
 |Column|Type|Options|
@@ -240,6 +255,9 @@
 
 ### Association
 - has_many :items
+- has_many :categories, through: categories_sizes
+- has_many :categories_sizes
+
 
 
 ## item_imagesテーブル
