@@ -11,16 +11,16 @@
             %span 必須
             %br/
           .field_name
-            = f.text_field :family_name, autofocus: true, autocomplete: "family_name"
-            = f.text_field :first_name, autofocus: true, autocomplete: "first_name"
+            = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例）山田"
+            = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "例）太郎"
         .field
           .field_topname
             = f.label :お名前カナ（全角）
             %span 必須
             %br/
           .field_name
-            = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana"
-            = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana"
+            = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana", placeholder: "例）ヤマダ"
+            = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例）タロウ"
         .field
           .field_top-birhday
             = f.label :生年月日
