@@ -5,26 +5,25 @@
       = render "devise/shared/error_messages", resource: resource
       .sign_p_form
         .field
+          = f.label :ニックネーム
+          %span 必須
+          %br/
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）フリマ太郎"
+        .field
           = f.label :メールアドレス 
           %span 必須
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
         .field
           = f.label :パスワード
           %span 必須
           %br/
-          = f.password_field :password, autocomplete: "new-password"
+          = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
         .field
           = f.label :パスワード（確認）
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
         .text
-          %h3 本人確認
-          %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-        .field
-          .field_topname
-            = f.label :お名前（全角）
-            %span 必須
-            %br/
         .actions
-          = f.submit "登録"
+          = f.submit "次へ進む"
+      -# = render "devise/shared/links"
