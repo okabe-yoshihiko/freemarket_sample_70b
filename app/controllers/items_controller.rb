@@ -14,11 +14,11 @@ class ItemsController < ApplicationController
 
   def category_children  
     @category_children = Category.find(params[:productcategory]).children 
-    end
+  end
 
 
   def category_grandchildren
     @category_grandchildren = Category.find(params[:productcategory]).children
-    end
+  end
 
 end
