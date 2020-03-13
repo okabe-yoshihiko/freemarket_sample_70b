@@ -74,3 +74,7 @@ end
 gem 'font-awesome-sass'
 gem 'payjp'
 gem 'pry-rails'
+
+
+gem 'carrierwave'
+gem 'mini_magick'

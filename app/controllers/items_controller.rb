@@ -9,5 +9,10 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @items = Item.new
+    # @items.users << current_user
   end
+
+  
+
 end

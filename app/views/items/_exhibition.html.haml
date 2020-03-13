@@ -8,13 +8,17 @@
           %span.red  必須
         %p.name__pict--text
           最大10枚までアップロードできます
-        
         .post__drop__box__container
-          
-          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
-            %label{for: "img-file"}
-              %input.file{:name => "example1", :type => "file",:class => "file"}/
-              %pre.label-box__text-visible ドラッグアンドドロップまたはクリックしてファイルをアップロード
+          -# = f.fields_for :item_image do |i|
+          -#   = i.file_field :item_image 
+          = form_with model: @items do |form|
+            = form.label :item_image, 'ドラッグアンドドロップまたはクリックしてファイルをアップロード'
+            = form.file_field :item_image
+
+          -# %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+          -#   %label{for: "img-file"}
+          -#     %input.file{:name => "example1", :type => "file",:class => "file"}/
+          -#     %pre.label-box__text-visible ドラッグアンドドロップまたはクリックしてファイルをアップロード
           .prev-content
           .label-content
             
@@ -38,7 +42,7 @@
           %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
             %p
-              %textarea{:cols => "30", :name => "msg", :rows => "10" ,:placeholder => "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷"}
+              %textarea{:cols => "30", :name => "msg", :rows => "10" ,:placeholder => "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
             
     %hr.style__ber/
     .exhibition-box__pict
@@ -204,7 +208,8 @@
           販売利益
           %span.price{"data-test" => "fee-value"} —
         %p.up
-          %input.up{:type => "submit", :value => "出品する"}/
+          = link_to "/" do
+            %input.up{:type => "submit", :value => "出品する"}/
         %p.back
           = link_to "/" do
             もどる
