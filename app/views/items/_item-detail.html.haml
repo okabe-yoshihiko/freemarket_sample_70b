@@ -26,11 +26,11 @@
           %tr
             %th カテゴリー
             %td
-              = link_to "ホビー", "#", class: "detail-link"
-              %br/
-              = link_to "(男女兼用)", "#", class: "detail-link"
-              %br/
-              = link_to "", "#", class: "detail-link"
+            = @category_name
+            %br
+            = @category_child_name
+            %br
+            = @category_grandchild_name
           %tr
             %th ブランド
             %td アウトレイジ

@@ -15,7 +15,12 @@ Rails.application.routes.draw do
       post 'pay', to: 'items#pay'
       get 'done', to: 'itemsdone'
     end
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
   end
+
   resources :users
   resources :cards, only: [:new, :create, :show] do
     collection do

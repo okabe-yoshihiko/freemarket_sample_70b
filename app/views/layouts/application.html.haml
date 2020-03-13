@@ -2,7 +2,9 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{type:"text/javascript", src:"http://code.jquery.com/jquery-2.2.3.min.js"}
     %title FreemarketSample70b
+    
     %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag

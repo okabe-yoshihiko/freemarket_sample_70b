@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(version: 2020_03_12_031953) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "family_name_kana", null: false

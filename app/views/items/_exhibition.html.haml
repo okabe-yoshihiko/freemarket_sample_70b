@@ -45,28 +45,17 @@
       %p.exhibition-box
         商品の詳細
       .exhibition-box__pict--box
+      = form_with model: @item, class: :form, local: true do |f|
         .name__pict
           カテゴリー
           %span.red  必須
-        %p.select
-          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
-            %p
-              %select{:name => "select"} 
-                %option{:value => "サンプル"} 選択してください
-                %option{:value => "サンプル1"} レディース
-                %option{:value => "サンプル2"} メンズ
-                %option{:value => "サンプル3"} ベビー・キッズ
-                %option{:value => "サンプル4"} インテリア・住まい・小物
-                %option{:value => "サンプル5"} 本・音楽・ゲーム
-                %option{:value => "サンプル6"} おもちゃ・ホビー・グッズ
-                %option{:value => "サンプル6"} コスメ・香水・美容
-                %option{:value => "サンプル6"} 家電・スマホ・カメラ
-                %option{:value => "サンプル6"} スポーツ・レジャー
-                %option{:value => "サンプル6"} ハンドメイド
-                %option{:value => "サンプル6"} チケット
-                %option{:value => "サンプル6"} 自動車・オートバイ
-                %option{:value => "サンプル6"} その他
-
+          .listing-select-wrapper
+            .listing-select-wrapper__box
+            .product_select-details
+              .product_select-group
+              .product_category-select
+                = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+              .product_select-children
     .exhibition-box__pict
       .exhibition-box__pict--box
         .name__pict
