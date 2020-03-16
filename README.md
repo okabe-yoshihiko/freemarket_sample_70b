@@ -216,8 +216,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false|
-|ancestry|string|multiple_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :items

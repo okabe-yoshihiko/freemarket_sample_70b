@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+    get 'profiles', to: 'users/registrations#new_profile'
+    post 'profiles', to: 'users/registrations#create_profile'
+  end
   root to: 'items#index'
-  resources :items, only: [:index, :show] do
+  resources :items, only: [:index, :show, :new]do
     collection do
       get 'confirm', to: 'items#confirm'
       post 'pay', to: 'items#pay'
-      get 'done', to: 'items#done'
+      get 'done', to: 'itemsdone'
+    end
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
     end
   end
+
   resources :users
   resources :cards, only: [:new, :show] do
     collection do

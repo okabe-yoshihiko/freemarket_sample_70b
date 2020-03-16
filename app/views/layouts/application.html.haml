@@ -2,6 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{type:"text/javascript", src:"http://code.jquery.com/jquery-2.2.3.min.js"}
     %title FreemarketSample70b
     = csrf_meta_tags
     = csp_meta_tag
@@ -10,4 +11,7 @@
     %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render partial: 'items/header'
     = yield
+    = render partial: 'items/footer'
+   

@@ -1,0 +1,79 @@
+.show-main
+  .item-box
+    .item-box__name product3
+    .item-box__content
+      .content-area
+        .content-area__main
+          = image_tag "freema images.jpeg", class: "show-item__main", size: "550x350"
+            -if item.buyer_id.present?
+            .item-sold
+              .item-sold__inner SOLD
+        %ul.item-img
+          %li.item-subimg
+            = image_tag "freema2.jpeg", size: "150x110"
+          %li.item-subimg
+            = image_tag "satou.jpeg", size: "150x110"
+          %li.item-subimg
+            = image_tag "zyuu.jpeg", size: "150x110"
+    .item-box__price
+      .item-box__price__int ¥ 500000
+      .item-box__price__complement (税込)  送料込み
+    .item-box__detail
+      全自動麻雀卓。咲でお馴染みの嶺上開花、河底撈魚やコークスクリューツモなどの特殊能力が発動出来る。売上金で豪遊し、闇営業から足を洗いたいと思っています。協力してください。
+    .item-box__table
+      %table
+        %tbody
+          %tr
+            %th 出品者
+            %td hoge
+          %tr
+            %th カテゴリー
+            %td
+              = link_to "ホビー", "#", class: "detail-link"
+              %br/
+              = link_to "(男女兼用)", "#", class: "detail-link"
+              %br/
+              = link_to "", "#", class: "detail-link"
+          %tr
+            %th ブランド
+            %td アウトレイジ
+          %tr
+            %th 商品のサイズ
+            %td 大きめ
+          %tr
+            %th 商品の状態
+            %td 未使用に近い
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 発送元の地域
+            %td
+              = link_to "京都府", "#", class: "detail-link"
+          %tr
+            %th 発送日の目安
+            %td 4-7日で発送
+    .item-box__options
+      %button{type: "submit", class:'like-btn'}
+        = icon('fas', 'star', class: 'detail-icon')
+        お気に入り
+      %button{type: "submit", class:'claim-btn'}
+        = icon('fas', 'flag', class: 'detail-icon')
+        不適切な商品の通報
+  .comment-box
+    .new-comment
+    %textarea
+      :preserve
+    .notice 
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %button{type: "submit", class:'comment-btn'}
+      = icon('fas', 'comment', class: 'detail-icon')
+      コメントする
+  %ul.itemslink
+    %li.detail-link < 前の商品
+    %li.detail-link 後ろの商品 >
+  .category-relation
+    = link_to "ベビー・キッズをもっと見る", "#", class: "category-link"
+ 
