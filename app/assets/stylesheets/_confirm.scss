@@ -11,6 +11,90 @@
     background-color: #ffffff;
     width: 700px;
     margin: 0 auto;
-    
+    &__header {
+      text-align: center;
+      line-height: 1.5;
+      font-size: 22px;
+      padding: 32px;
+    }
+    .buy-item {
+      border-top: 1px solid #f5f5f5;
+      display: flex;
+      justify-content: center;
+
+      &__view {
+        position: relative;
+        &__sold{
+          width: 0;
+          height: 0;
+          border-top: 60px solid #ea352d ;
+          border-right: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+          border-left: 60px solid #ea352d ;
+          z-index:100;
+          position: relative;
+          top:-255px;
+          &__inner{
+            transform: rotate(-45deg);
+            font-size: 28px;
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
+      }
+      &__detail {
+        padding-top: 50px;
+        margin-left: 30px;
+        text-align: center;
+        line-height: 1.5;
+        font-size: 20px;
+        &__name {
+          margin-top: 5px;
+          font-size: 25px;
+        }
+        &__price {
+          margin-top: 30px;
+          font-size: 20px;
+        }
+        &__tax {
+          margin-top: 5px;
+          font-size: 16px;
+        }
+      }
+    }
+    .item-derivery {
+      margin-top: 50px;
+      text-align: center;
+      line-height: 1.5;
+      &__price {
+        padding: 25px;
+        border-top: 1px solid #f5f5f5;
+        font-size: 25px;
+      }
+      &__city {
+        padding: 25px;
+        border-top: 1px solid #f5f5f5;
+        font-size: 25px;
+      }
+    }
+    .pay-area {
+      padding: 25px;
+      border-top: 1px solid #f5f5f5;
+      display: flex;
+      justify-content: center;
+      .disabled-button{
+        text-align: center;
+        margin: 16px 0 0;
+        background: #888888;
+        color: #fff;
+        display: block;
+        width: 100%;
+        font-size: 24px;
+        line-height: 60px;
+        cursor: not-allowed;
+      }
+    }
   }
 }

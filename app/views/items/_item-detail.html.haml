@@ -5,6 +5,9 @@
       .content-area
         .content-area__main
           = image_tag "freema images.jpeg", class: "show-item__main", size: "550x350"
+        -if @item.buyer_id.present?
+          .content-area__main__sold
+            .content-area__main__sold__inner SOLD
         %ul.item-img
           %li.item-subimg
             = image_tag "freema2.jpeg", size: "150x110"
@@ -26,11 +29,11 @@
           %tr
             %th カテゴリー
             %td
-            = @category_name
-            %br
-            = @category_child_name
-            %br
-            = @category_grandchild_name
+              = link_to "ホビー", "#", class: "detail-link"
+              %br/
+              = link_to "(男女兼用)", "#", class: "detail-link"
+              %br/
+              = link_to "", "#", class: "detail-link"
           %tr
             %th ブランド
             %td アウトレイジ
@@ -73,4 +76,3 @@
     %li.detail-link 後ろの商品 >
   .category-relation
     = link_to "ベビー・キッズをもっと見る", "#", class: "category-link"
- 
