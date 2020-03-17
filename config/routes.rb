@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
   root to: 'items#index'
-  resources :items, only: [:index, :show, :new]do
+  resources :items, only: [:index, :show, :create, :new]do
     collection do
       get 'confirm', to: 'items#confirm'
       post 'pay', to: 'items#pay'

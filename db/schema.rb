@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "brand"
+    t.string "brand", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,52 +47,53 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
   end
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "condition"
+    t.string "condition", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "delivery_cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "delivery_city"
+    t.string "delivery_city", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "delivery_days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "delivery_date"
+    t.string "delivery_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "delivery_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "delivery_type"
+    t.string "delivery_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "item_image"
+    t.string "item_image", null: false
+    t.string "src"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "detail"
-    t.integer "price"
-    t.integer "seller_id"
-    t.integer "buyer_id"
-    t.integer "category_id"
-    t.integer "brand_id"
-    t.integer "size_id"
-    t.integer "item_img_id"
-    t.integer "condition_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", null: false
+    t.text "detail", null: false
+    t.integer "price", null: false
+    t.integer "seller_id", null: false
+    t.integer "buyer_id", null: false
+    t.integer "category_id", null: false
+    t.integer "brand_id", null: false
+    t.integer "size_id", null: false
+    t.integer "item_image_id", null: false
+    t.integer "condition_id", null: false
   end
 
   create_table "postage_payers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postage_payer"
+    t.string "postage_payer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,7 +114,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "size"
+    t.string "size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -131,4 +132,5 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_images", "items"
 end
