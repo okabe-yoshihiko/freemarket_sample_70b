@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  @item = Item.find(1)
 
   def index
   end
@@ -10,21 +9,20 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def pay
     card = Card.where(user_id: current_user.id).first
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
 
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-      amount: @item.price, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      amount: @item.price, 
+      card: params['payjp-token'], 
       currency: 'jpy'
     )
-    @item = Item.find(1)
-    @item.update( buyer_id: current_user.id)
+    @item.update(buyer_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
   end
 
@@ -52,9 +50,9 @@ class ItemsController < ApplicationController
       :detail,
       :price,
       :seller_id,
-      :buyer_id,
-      #この辺の他コードは関係ない部分なので省略してます
+      :buyer_id
     )
+      #この辺の他コードは関係ない部分なので省略してます
   end
 
 end
