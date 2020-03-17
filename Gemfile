@@ -76,3 +76,5 @@ gem 'payjp'
 gem 'pry-rails'
 gem 'ancestry'
 gem 'jquery-rails'
+
+gem 'carrierwave'
