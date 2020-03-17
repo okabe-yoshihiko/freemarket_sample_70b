@@ -331,7 +331,6 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
-  device
   devise
   fog-aws
   font-awesome-sass
