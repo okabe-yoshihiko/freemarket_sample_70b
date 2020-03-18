@@ -69,30 +69,6 @@
 
 
 
-## sellersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :item
-
-
-
-## buyersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :item
-
-
-
 ## favoritiesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -138,10 +114,10 @@
 |detail|text|null: false|
 |price|integer|null: false|
 |seller_id|integer|null: false, foreign_key: true|
-|buyer_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|
 |category_id|integer|null: false, foreign_key: true|
-|brand_id|integer|null: false, foreign_key: true|
-|size_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|size_id|integer|foreign_key: true|
 |item_img_id|integer|null: false, foreign_key: true|
 |condition_id|integer|null: false, foreign_key: true|
 ### Association
