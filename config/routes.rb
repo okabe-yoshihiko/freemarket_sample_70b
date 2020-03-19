@@ -4,12 +4,10 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
-    post 'addresses', to: 'users/registrations#create_address'
     get 'profiles', to: 'users/registrations#new_profile'
-    post 'profiles', to: 'users/registrations#create_profile'
   end
   root to: 'items#index'
-  resources :items, only: [:index, :show, :new]do
+  resources :items, only: [:index, :show, :new, :edit, :update, :destroy]do
     collection do
       get 'confirm', to: 'items#confirm'
       post 'pay', to: 'items#pay'

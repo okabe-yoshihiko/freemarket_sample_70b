@@ -49,6 +49,18 @@
         text-align: center;
       }
     }
+    &__btn{
+      background-color: #3CCACE;
+      color: white;
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 60px;
+      text-decoration: none;
+    }
     &__detail {
       font-size: 18px;
       margin-bottom: 30px;
