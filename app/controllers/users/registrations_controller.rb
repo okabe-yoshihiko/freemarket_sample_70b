@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
 
   # POST /resource
-   def create
+   def new_address
     @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_address
    end
 
-  def create_address
+  def new_profile
     @user = User.new(session["devise.regist_data"]["user"])
     @address = Address.new(address_params)
     unless @address.valid?
@@ -31,10 +31,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"]["address"] = @address.attributes
     @profile = @user.build_profile
-    render :new_profile
   end
 
-  def create_profile
+  def create
     @user = User.new(session["devise.regist_data"]["user"])
     @address = Address.new(session["devise.regist_data"]["address"])
     @profile = Profile.new(profile_params)
@@ -46,6 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
+    redirect_to root_path
   end
 
   # GET /resource/edit
