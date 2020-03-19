@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     collection do
       get 'confirm', to: 'items#confirm'
       post 'pay', to: 'items#pay'
-      get 'done', to: 'itemsdone'
+      get 'done', to: 'items#done'
     end
   end
   resources :users

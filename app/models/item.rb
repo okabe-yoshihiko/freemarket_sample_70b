@@ -1,13 +1,15 @@
 class Item < ApplicationRecord
-  belongs_to :user
-  belongs_to :postage_payer
-  belongs_to :delivery_city
-  belongs_to :delivery_type
-  belongs_to :delivery_date
-  belongs_to :condition
-  belongs_to :category
-  belongs_to :brand
-  belongs_to :size
+  validates :name, presence: true
+
+  belongs_to :user,optional: true
+  belongs_to :postage_payer, optional: true
+  belongs_to :delivery_city, optional: true
+  belongs_to :delivery_type, optional: true
+  belongs_to :delivery_date, optional: true
+  belongs_to :condition, optional: true
+  # belongs_to :category, optional: true
+  belongs_to :brand, optional: true
+  belongs_to :size, optional: true
   has_one :user_evaluation
   has_many :sellers
   has_many :buyers

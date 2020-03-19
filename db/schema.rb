@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category", null: false
+    t.bigint "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,12 +84,15 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
     t.text "detail", null: false
     t.integer "price", null: false
     t.integer "seller_id", null: false
-    t.integer "buyer_id", null: false
+    t.integer "buyer_id"
     t.integer "category_id", null: false
-    t.integer "brand_id", null: false
-    t.integer "size_id", null: false
+    t.integer "brand_id"
+    t.integer "size_id"
     t.integer "item_image_id", null: false
     t.integer "condition_id", null: false
+    t.integer "delivery_cities_id", null: false
+    t.integer "delivery_days_id", null: false
+    t.integer "delivery_types_id", null: false
   end
 
   create_table "postage_payers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

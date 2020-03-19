@@ -17,15 +17,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
-    # @item = Item.new(item_params)
-    # if @item.save
-    #   redirect_to root_path, notice:'商品を出品しました'
-    # end
     @item = Item.new(item_params)
-    binding.pry
+    @item.update(seller_id: current_user.id)
+    # binding.pry
+    @item.save!
+    # binding.pry
 
-
+    redirect_to root_path, notice:'商品を出品しました'
     # if params[:item_image_attributes] != nil
     #   @item.save
     #   redirect_to root_path(@item.id)
@@ -33,8 +31,20 @@ class ItemsController < ApplicationController
   end
 
   private
-
   def item_params
-    params.require(:item).permit(:name, :detail, :price, :seller_id, :buyer_id, :category_id, :brand_id, :size_id, :condition_id, item_image_attributes:[:image])
+    params.require(:item).permit(
+      :name, 
+      :detail, 
+      :price,
+      
+      :category_id, 
+      :brand_id, 
+      :size_id, 
+      :delivery_cities_id,
+      :delivery_days_id,
+      :delivery_types_id,
+      :condition_id, 
+      item_image_attributes:[:image]
+    )
   end
 end
