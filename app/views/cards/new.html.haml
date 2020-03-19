@@ -39,7 +39,7 @@
     %li.pages
       =link_to "ログアウト", destroy_user_session_path, method: :delete,class:"mypagelink"
   .mypage__main
-    = form_with url: "/cards/create", method: :post, html: { name: "inputForm" } do |f|
+    = form_with url: "/cards", method: :post, html: { name: "inputForm" } do |f|
       .card-header
         クレジットカード情報入力
       .card-main
