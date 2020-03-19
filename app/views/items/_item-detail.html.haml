@@ -5,9 +5,9 @@
       .content-area
         .content-area__main
           = image_tag "freema images.jpeg", class: "show-item__main", size: "550x350"
-        -if @item.buyer_id.present?
-          .content-area__main__sold
-            .content-area__main__sold__inner SOLD
+          -if @item.buyer_id.present?
+            .show-item__main__sold
+              .show-item__main__sold__inner SOLD
         %ul.item-img
           %li.item-subimg
             = image_tag "freema2.jpeg", size: "150x110"
@@ -18,6 +18,10 @@
     .item-box__price
       .item-box__price__int ¥ 500000
       .item-box__price__complement (税込)  送料込み
+    - if @item.buyer_id.present? 
+      = link_to "売り切れました", "/", class: "disabled-button bold"
+    - else
+      = link_to "購入画面に進む", "/items/confirm/1", class: "item-box__btn"
     .item-box__detail
       全自動麻雀卓。咲でお馴染みの嶺上開花、河底撈魚やコークスクリューツモなどの特殊能力が発動出来る。売上金で豪遊し、闇営業から足を洗いたいと思っています。協力してください。
     .item-box__table

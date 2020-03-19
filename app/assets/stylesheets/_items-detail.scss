@@ -11,7 +11,7 @@
     background-color: #ffffff;
     padding: 24px 40px 40px;
     width: 700px;
-    height: 1350px;
+    height: 1450px;
     margin: 0 auto;
     &__name {
       text-align: center;
@@ -29,17 +29,17 @@
             &__sold{
               width: 0;
               height: 0;
-              border-width: 120px 120px 0 0;
+              border-width: 240px 240px 0 0;
               border-color: #ea352d transparent transparent transparent;
               display: block;
               position: absolute;
-              top: 0;
-              left: 0;
+              top: 108px;
+              left: 445px;
               z-index: 1;
               border-style: solid;
               &__inner{
-                top: -90px;
-                font-size: 30px;
+                top: -200px;
+                font-size: 50px;
                 position: absolute;
                 left: 0;
                 z-index: 2;
@@ -71,6 +71,31 @@
       &__complement {
         text-align: center;
       }
+    }
+    .disabled-button{
+      background-color: #888888;
+      color: #ffffff;
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 60px;
+      text-decoration: none;
+      cursor: not-allowed;
+    }
+    &__btn {
+      background-color: #3CCACE;
+      color: #ffffff;
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 60px;
+      text-decoration: none;
     }
     &__detail {
       font-size: 18px;

@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
+  before_action :move_to_session, except: [:index, :show]
+  before_action :card_registration, only: [:confirm, :pay]
 
   def index
   end
@@ -13,7 +15,6 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
     @item = Item.find(params[:id])
 
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -43,16 +44,12 @@ class ItemsController < ApplicationController
   end
 
   private
+  def move_to_session
+    redirect_to "/users/sign_in" unless user_signed_in?
+  end
 
-  def item_params
-    params.require(:item).permit(
-      :name,
-      :detail,
-      :price,
-      :seller_id,
-      :buyer_id
-    )
-      #この辺の他コードは関係ない部分なので省略してます
+  def card_registration
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 
 end
