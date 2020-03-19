@@ -193,6 +193,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|null: false|
 
 ### Association
 - has_many :items
@@ -205,7 +206,7 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :items
