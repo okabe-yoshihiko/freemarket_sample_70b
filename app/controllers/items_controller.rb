@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def done
+    @item = Item.find(params[:id])
   end
 
   def new

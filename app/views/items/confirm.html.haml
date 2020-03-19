@@ -4,7 +4,6 @@
     .buy-item
       .buy-item__view
         = image_tag "harv.jpeg", class: "confirm-item__img", size: "300x250"
-        -# = image_tag(@item_image_id[0].item_image.url,class:"confirm-item__img", size: "300x250")
         -if @item.buyer_id.present?
           .buy-item__view__sold
             .buy-item__view__sold__inner SOLD
@@ -18,8 +17,7 @@
       .item-derivery__city 配送地域 :愛知県
     .pay-area
       -if @item.buyer_id.present? 
-        = link_to "売り切れました","/items/detail",class:"disabled-button bold"
+        = link_to "売り切れました",item_path(@item),class:"disabled-button bold"
       -else
         = form_tag(action: :pay, method: :post) do
-          :plain
-            <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_4ed477f441ebd6bc7c713d4f"></script>
+          %script.payjp-button{"data-key": "pk_test_4ed477f441ebd6bc7c713d4f", src: "https://checkout.pay.jp", type: "text/javascript"}
