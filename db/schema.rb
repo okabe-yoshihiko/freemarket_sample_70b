@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
     t.string "family_name_kana", null: false
     t.string "first_name", null: false
     t.string "first_name_kana", null: false
-    t.integer "tel_number"
+    t.string "tel_number"
     t.integer "zip_cord", null: false
     t.string "city", null: false
     t.string "address", null: false
@@ -41,9 +41,11 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,7 +90,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
     t.integer "category_id", null: false
     t.integer "brand_id"
     t.integer "size_id"
-    t.integer "item_image_id", null: false
+    t.integer "item_image_id"
     t.integer "condition_id", null: false
     t.integer "delivery_cities_id", null: false
     t.integer "delivery_days_id", null: false
@@ -106,7 +108,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_051557) do
     t.string "family_name_kana", null: false
     t.string "first_name", null: false
     t.string "first_name_kana", null: false
-    t.text "introduction", null: false
+    t.text "introduction"
     t.string "image"
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false

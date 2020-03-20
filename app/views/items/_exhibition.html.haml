@@ -13,16 +13,14 @@
           .post__drop__box__container
             
             = form.fields_for :images do |i|
-              = i.file_field :item_image
-              = form.label :item_image, 'ドラッグアンドドロップまたはクリックしてファイルをアップロード'
-             
+              = i.file_field :item_image_id
+              = form.label :item_image_id, 'ドラッグアンドドロップまたはクリックしてファイルをアップロード'
               -# = form.submit "出品する", class: "up"
 
           .prev-content
           .label-content
             
           %hr.style__ber/
-
           .exhibition-box__pict
             .exhibition-box__pict--box
               .name__pict
@@ -52,24 +50,25 @@
                 カテゴリー
                 %span.red  必須
               %p.select
-                = form.text_field :category, class: 'searchInput.searchBox--input'
+                = form.select :category_id, [["レディース", 0],["メンズ", 1],["ベビー・キッズ", 2],["インテリア・住まい・小物", 3]], prompt:"選択してください"
+
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %p
-                -#     %select{:name => "select"} 
-                -#       %option{:value => "サンプル"} 選択してください
-                -#       %option{:value => "サンプル1"} レディース
-                -#       %option{:value => "サンプル2"} メンズ
-                -#       %option{:value => "サンプル3"} ベビー・キッズ
-                -#       %option{:value => "サンプル4"} インテリア・住まい・小物
-                -#       %option{:value => "サンプル5"} 本・音楽・ゲーム
-                -#       %option{:value => "サンプル6"} おもちゃ・ホビー・グッズ
-                -#       %option{:value => "サンプル6"} コスメ・香水・美容
-                -#       %option{:value => "サンプル6"} 家電・スマホ・カメラ
-                -#       %option{:value => "サンプル6"} スポーツ・レジャー
-                -#       %option{:value => "サンプル6"} ハンドメイド
-                -#       %option{:value => "サンプル6"} チケット
-                -#       %option{:value => "サンプル6"} 自動車・オートバイ
-                -#       %option{:value => "サンプル6"} その他
+                    -# %select{:name => "select"} 
+                    -#   %option{:value => "サンプル"} 選択してください
+                    -#   %option{:value => "サンプル1"} レディース
+                    -#   %option{:value => "サンプル2"} メンズ
+                    -#   %option{:value => "サンプル3"} ベビー・キッズ
+                    -#   %option{:value => "サンプル4"} インテリア・住まい・小物
+                    -#   %option{:value => "サンプル5"} 本・音楽・ゲーム
+                    -#   %option{:value => "サンプル6"} おもちゃ・ホビー・グッズ
+                    -#   %option{:value => "サンプル6"} コスメ・香水・美容
+                    -#   %option{:value => "サンプル6"} 家電・スマホ・カメラ
+                    -#   %option{:value => "サンプル6"} スポーツ・レジャー
+                    -#   %option{:value => "サンプル6"} ハンドメイド
+                    -#   %option{:value => "サンプル6"} チケット
+                    -#   %option{:value => "サンプル6"} 自動車・オートバイ
+                    -#   %option{:value => "サンプル6"} その他
 
           .exhibition-box__pict
             .exhibition-box__pict--box
@@ -77,7 +76,7 @@
                 ブランド
                 %span.gray  任意
               %p.name__pict--text
-                = form.text_field :brand, class: 'searchInput.searchBox--input', placeholder: '例)　シャネル'
+                = form.text_field :brand_id, class: 'searchInput.searchBox--input', placeholder: '例)　シャネル'
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %input{name: "utf8", type: "hidden", value: "✓"}/
                 -#   %input#searchInput.searchBox--input{name: "key", placeholder: "例)　シャネル",height: "36px",width: "575px"}/
@@ -87,10 +86,11 @@
                 商品の状態
                 %span.red  必須
               %p.select
-                = form.text_field :condition, class: 'searchInput.searchBox--input'
+                = form.select :condition_id, [["犬"],["猫"],["馬"],["牛"]], prompt:"選択してください"
+
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %p
-                -#     %select{:name => "select"}
+                    -# %select{:name => "select"}
                 -#       %option{:value => "サンプル"} 選択してください
                 -#       %option{:value => "サンプル1"} 新品、未使用
                 -#       %option{:value => "サンプル2"} 未使用に近い
@@ -108,7 +108,7 @@
                 配送料の負担
                 %span.red  必須
               %p.select
-                = form.text_field :delivery_types, class: 'searchInput.searchBox--input'
+                = form.select :delivery_types_id, [["犬"], ["猫"],["馬"],["牛"]], prompt:"選択してください"
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %p
                 -#     %select{:name => "select"}
@@ -122,7 +122,7 @@
                 発送元の地域
                 %span.red  必須
               %p.select
-                = form.text_field :delivery_cities, class: 'searchInput.searchBox--input'
+                = form.select :delivery_cities_id, [["犬"], ["猫"],["馬"],["牛"]], prompt:"選択してください"
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %p
                 -#     %select{:name => "select"}
@@ -181,7 +181,7 @@
                 発送までの日数
                 %span.red  必須
               %p.select
-                = form.text_field :delivery_days, class: 'searchInput.searchBox--input'
+                = form.select :delivery_days_id, [["犬"], ["猫"],["馬"],["牛"]], prompt:"選択してください"
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %p
                 -#     %select{:name => "select"}
@@ -200,10 +200,11 @@
                 販売価格
                 %span.red  必須
               %p.name__pict--text
-                = form.text_field :price, class: 'searchInput.searchBox--input'
+                ¥
+                = form.text_field :price, class: 'searchInput.searchBox--input' 
                 -# %form{"accept-charset" => "UTF-8", action: "create", method: "post"}
                 -#   %input{name: "utf8", type: "hidden", value: "✓"}/
-                -#   ¥
+               
                 -#   %input#searchInput.searchBox--input{name: "key", placeholder: "0",height: "36px",width: "575px"}/
               .name__pict--price
                 販売手数料(10%)

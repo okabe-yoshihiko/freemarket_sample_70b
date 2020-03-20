@@ -75,6 +75,7 @@ gem 'font-awesome-sass'
 gem 'payjp'
 gem 'pry-rails'
 
-
-gem 'carrierwave'
 gem 'mini_magick'
+gem 'ancestry'
+gem 'jquery-rails'
+gem 'carrierwave'

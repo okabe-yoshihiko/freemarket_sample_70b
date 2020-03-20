@@ -7,7 +7,7 @@
     %li.pages
       = link_to 'いいね一覧', "#",class:"mypagelink" 
     %li.pages
-      = link_to '出品する', "#",class:"mypagelink" 
+      = link_to '出品する', "/items/new",class:"mypagelink" 
     %li.pages
       = link_to '出品した商品-出品中', "#",class:"mypagelink" 
     %li.pages
@@ -42,7 +42,7 @@
       .mypage__main__top-cat__top
         .user-icon
         .user-name
-          = link_to 'NAME', "#",class:"user-title"
+          = link_to @nickname, "#",class:"user-title"
         .user-score
           %h5.evalutation 評価26
           %h5.exhibition 出品23

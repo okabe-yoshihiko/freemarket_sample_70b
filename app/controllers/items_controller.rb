@@ -18,10 +18,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    # binding.pry
     @item.update(seller_id: current_user.id)
     # binding.pry
     @item.save!
-    # binding.pry
 
     redirect_to root_path, notice:'商品を出品しました'
     # if params[:item_image_attributes] != nil
@@ -47,4 +47,15 @@ class ItemsController < ApplicationController
       item_image_attributes:[:image]
     )
   end
+
+  def category_children  
+    @category_children = Category.find(params[:productcategory]).children 
+  end
+
+
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+  end
+
 end
