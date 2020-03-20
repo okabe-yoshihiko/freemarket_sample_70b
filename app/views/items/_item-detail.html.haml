@@ -18,10 +18,13 @@
     .item-box__price
       .item-box__price__int ¥ 500000
       .item-box__price__complement (税込)  送料込み
-    - if @item.buyer_id.present? 
+  
+    - if current_user.id == @item.seller_id
+      = link_to "出品した商品情報を削除する", "/items/#{@item.id}", method: :delete, class: "item-delete__btn"
+    - elsif @item.buyer_id.present?
       = link_to "売り切れました", "/", class: "disabled-button bold"
     - else
-      = link_to "購入画面に進む", "/items/confirm/1", class: "item-box__btn"
+      = link_to "購入画面に進む", "/items/confirm/#{@item.id}", class: "item-box__btn"
     .item-box__detail
       全自動麻雀卓。咲でお馴染みの嶺上開花、河底撈魚やコークスクリューツモなどの特殊能力が発動出来る。売上金で豪遊し、闇営業から足を洗いたいと思っています。協力してください。
     .item-box__table

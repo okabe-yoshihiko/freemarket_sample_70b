@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   root to: 'items#index'
 
-  resources :items, only: [:index, :show, :new]do
+  resources :items, only: [:index, :show, :new, :destroy]do
     collection do
       get 'confirm/:id', to: 'items#confirm'
       post 'pay/:id', to: 'items#pay'

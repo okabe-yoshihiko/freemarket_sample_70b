@@ -4,15 +4,23 @@ class ItemsController < ApplicationController
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
+    @item = Item.all
   end
 
   def show
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to action: 'index' 
   end
 
   def confirm
     @item = Item.find(params[:id])
   end
+
 
   def pay
     @item = Item.find(params[:id])
@@ -43,6 +51,7 @@ class ItemsController < ApplicationController
   def category_grandchildren
     @category_grandchildren = Category.find(params[:productcategory]).children
   end
+
 
   private
   def move_to_session
