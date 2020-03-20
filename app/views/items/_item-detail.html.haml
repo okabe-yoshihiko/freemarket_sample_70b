@@ -1,6 +1,6 @@
 .show-main
   .item-box
-    .item-box__name product3
+    .item-box__name= @item.name
     .item-box__content
       .content-area
         .content-area__main
@@ -16,20 +16,22 @@
           %li.item-subimg
             = image_tag "zyuu.jpeg", size: "150x110"
     .item-box__price
-      .item-box__price__int ¥ 500000
+      .item-box__price__int
+        ¥
+        =@item.price
       .item-box__price__complement (税込)  送料込み
     - if @item.buyer_id.present? 
       = link_to "売り切れました", "/", class: "disabled-button bold"
     - else
       = link_to "購入画面に進む", "/items/confirm/1", class: "item-box__btn"
     .item-box__detail
-      全自動麻雀卓。咲でお馴染みの嶺上開花、河底撈魚やコークスクリューツモなどの特殊能力が発動出来る。売上金で豪遊し、闇営業から足を洗いたいと思っています。協力してください。
+      =@item.detail
     .item-box__table
       %table
         %tbody
           %tr
             %th 出品者
-            %td hoge
+            %td=@item.seller.nickname
           %tr
             %th カテゴリー
             %td

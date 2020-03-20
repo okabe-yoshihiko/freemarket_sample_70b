@@ -4,10 +4,11 @@ class ItemsController < ApplicationController
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
+    @items = Item.all
   end
 
   def show
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def confirm

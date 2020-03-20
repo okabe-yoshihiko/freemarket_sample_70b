@@ -98,95 +98,21 @@
           %h3.title
             新規投稿商品
       .main__pickup__box--lists
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬1
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    500000円
-                  %li.price__comment
-                    %i.fa.fa-star.LikeIcon
-                    0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬2
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000000円
-                  %li.price__comment
-                    %i.fa.fa-star.LikeIcon
-                    0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬3
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000000円
-                  %li.price__comment
-                    
-                    %i.fa.fa-star.LikeIcon
-                    0
-      .main__pickup__box--lists
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬4
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000000円
-                  %li.price__comment
-                    
-                    %i.fa.fa-star.LikeIcon
-                    0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬5
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000円
-                  %li.price__comment
-                    
-                    %i.fa.fa-star.LikeIcon
-                    0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬6
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    %p 300円
-                  %li.price__comment
-                    %i.fa.fa-star.LikeIcon
-                    0
-                    
+        - @items.each do |item|
+          .main__pickup__box--lists__box
+            = link_to item_path(item) do
+              %figure.main__pickup__box--lists__box--img
+                = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
+              .main__pickup__box--lists__box__body
+                %h3.name
+                  = item.name
+                .price
+                  %ul.price__comment
+                    %li.price__comment
+                      =item.price
+                    %li.price__comment
+                      %i.fa.fa-star.LikeIcon
+                      0
 
   %section.main__visual3
     -# 6個目ブロック
