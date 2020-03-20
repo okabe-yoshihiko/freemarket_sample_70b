@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :price, null: false
       t.integer :seller_id
       t.integer :buyer_id
-      t.string :customer_id, null: false
+      t.string :customer_id
       t.timestamps
     end
   end

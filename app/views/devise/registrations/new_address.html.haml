@@ -2,7 +2,7 @@
   .sign_p
     %h2 商品送付先住所の登録
     -# %p 安心・安全にご利用いただくために、商品送付先住所の登録にご協力ください。他のお客さまに公開されることはありません。
-    = form_for @address do |f|
+    = form_for @address, url: profiles_path,  method: :get do |f|
       = render "devise/shared/error_messages", resource: @address
       .sign_p_form
         .field
@@ -42,6 +42,7 @@
           = f.text_field :building, autofocus: true, autocomplete: "building"
         .field
           = f.label :お届け先の電話番号
+          %span 必須
           %br/
           = f.text_field :tel_number, autofocus: true, autocomplete: "tel_number",placeholder: " 例）09012345678（ハイフン無し）"
         .actions
