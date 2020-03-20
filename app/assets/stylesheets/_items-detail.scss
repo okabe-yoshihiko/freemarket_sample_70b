@@ -72,6 +72,18 @@
         text-align: center;
       }
     }
+    .item-delete__btn {
+      background-color: red;
+      color: #ffffff;
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 60px;
+      text-decoration: none;
+    }
     .disabled-button{
       background-color: #888888;
       color: #ffffff;
