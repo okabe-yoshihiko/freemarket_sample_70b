@@ -12,8 +12,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to action: 'index' 
+    if @item.destroy
+    redirect_to user_path(current_user)
+    else
+    redirect_to action: 'fail'
+    end 
   end
 
   def confirm
@@ -32,6 +35,9 @@ class ItemsController < ApplicationController
   end
 
   def done
+  end
+
+  def fail
   end
 
   def new

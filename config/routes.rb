@@ -11,11 +11,14 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :show, :new, :destroy]do
     collection do
-      get 'confirm/:id', to: 'items#confirm'
       post 'pay/:id', to: 'items#pay'
       get 'done/:id', to: 'items#done'
+      get 'fail/:id', to: 'items#fail'
       get 'category_children' 
       get 'category_grandchildren'
+    end
+    member do
+      get 'confirm', to: 'items#confirm'
     end
   end
 
