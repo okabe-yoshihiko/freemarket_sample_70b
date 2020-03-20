@@ -13,15 +13,14 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-    redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
     else
-    redirect_to action: 'fail'
+      redirect_to action: 'fail'
     end 
   end
 
   def confirm
   end
-
 
   def pay
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
