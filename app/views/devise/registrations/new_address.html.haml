@@ -1,9 +1,7 @@
 .sign
   .sign_p
     %h2 商品送付先住所の登録
-    -# %p 安心・安全にご利用いただくために、商品送付先住所の登録にご協力ください。他のお客さまに公開されることはありません。
     = form_for @address, url: profiles_path,  method: :get do |f|
-      -# = render "devise/shared/error_messages", resource: @address
       .sign_p_form
         .field
           .field_topname

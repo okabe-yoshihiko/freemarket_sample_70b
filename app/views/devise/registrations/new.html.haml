@@ -2,7 +2,6 @@
   .sign_p
     %h2 会員情報入力
     = form_for(resource, as: resource_name, url: addresses_path, method: :get) do |f|
-      -# = render "devise/shared/error_messages", resource: resource
       .sign_p_form
         .field
           = f.label :ニックネーム
@@ -38,4 +37,3 @@
         .text
         .actions
           = f.submit "次へ進む"
-      -# = render "devise/shared/links"
