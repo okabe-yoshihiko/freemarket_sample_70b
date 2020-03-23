@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_032118) do
+ActiveRecord::Schema.define(version: 2020_03_16_031649) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_032118) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 2020_03_18_032118) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "detail", null: false
     t.string "name", null: false
+    t.text "detail", null: false
     t.integer "price", null: false
     t.integer "seller_id", null: false
     t.integer "buyer_id"
@@ -80,12 +80,6 @@ ActiveRecord::Schema.define(version: 2020_03_18_032118) do
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
     t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

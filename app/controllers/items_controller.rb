@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :item_params, only: [:show, :destroy, :confirm, :pay, :done]
+  before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done]
   before_action :move_to_session, except: [:index, :show]
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
-    @item = Item.all
+    @item = Item.includes(:item_images).where(buyer_id: nil).order(created_at: :desc).limit(5)
   end
 
   def show
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
 
 
   private
-  def item_params
+  def item_set
     @item = Item.find(params[:id])
   end
 
