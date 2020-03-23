@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
-
-  resources :items, only: [:index, :show, :new, :destroy]do
+  resources :items, only: [:index, :show, :new,:create,:destroy]do
     collection do
       post 'pay/:id', to: 'items#pay'
       get 'done/:id', to: 'items#done'

@@ -11,6 +11,7 @@ class CreateAaddresses < ActiveRecord::Migration[5.2]
       t.string :address, null: false
       t.string :building
       t.integer :user, null: false, foreign_key: true
+      t.integer :prefecture,       null: false, default: "0"
       t.timestamps
     end
   end

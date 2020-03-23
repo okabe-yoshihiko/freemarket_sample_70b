@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
-    @item.update(buyer_id: current_user.id)
+    @item.update(seller_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
   end
 
@@ -40,7 +40,19 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @item.item_images.new
     @category = Category.where(ancestry: nil).limit(13)
+  end
+
+  def create
+    @item = Item.new(item_params)
+    if  @item.save
+      redirect_to root_path
+    else
+      flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
+      redirect_to new_item_path
+    end
   end
 
   def category_children  
@@ -64,6 +76,10 @@ class ItemsController < ApplicationController
 
   def card_registration
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :detail, :price,:category_id, :brand,:size,:day_id,:postage_id,:prefecture_id,:condition,item_images_attributes:[:id, :image, :_destroy]).merge(seller_id: current_user.id)
   end
 
 end

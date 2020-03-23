@@ -116,77 +116,26 @@
 |seller_id|integer|null: false, foreign_key: true|
 |buyer_id|integer|
 |category_id|integer|null: false, foreign_key: true|
-|brand_id|integer|foreign_key: true|
-|size_id|integer|foreign_key: true|
-|item_img_id|integer|null: false, foreign_key: true|
-|condition_id|integer|null: false, foreign_key: true|
+|brand|string|foreign_key: true|
+|size_|string|foreign_key: true|
+|condition|string|null: false|
+|postage_id|string|null: false|
+|prefecture_id|string|null: false|
+|day_id|string|null: false|
+
 ### Association
 - belongs_to :user
-- belongs_to :postage_payer
-- belongs_to :delivery_city
-- belongs_to :delivery_type
-- belongs_to :delivery_date
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :postage
+  belongs_to_active_hash :day
 - belongs_to :condition
 - belongs_to :category
-- belongs_to :brand
-- belongs_to :size
 - has_one :user_evaluation
 - has_many :sellers
 - has_many :buyers
 - has_many :comments
 - has_many :favorities
 - has_many :item_images
-
-
-
-## postage_payersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|postage_payer|string|null: false|
-
-### Association
-- has_many :items
-
-
-
-## delivery_citysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|delivery_city|string|null: false|
-
-### Association
-- has_many :items
-
-
-
-## delivery_typesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|delivery_type|string|null: false|
-
-### Association
-- has_many :items
-
-
-
-## delivery_daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|delivery_date|string|null: false|
-
-### Association
-- has_many :items
-
-
-
-## conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-
-### Association
-- has_many :items
-
 
 
 ## categoriesテーブル
@@ -197,8 +146,6 @@
 
 ### Association
 - has_many :items
-- has_one :category_size
-- has_one :size, through: :category_size
 - has_ancestry
 
 
@@ -210,18 +157,6 @@
 
 ### Association
 - has_many :items
-
-
-## categories_sizesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category|integer|null: false, foreign_key: true|
-|size|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :category
-- belongs_to :size
-
 
 
 ## sizesテーブル
@@ -239,7 +174,7 @@
 ## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_image|string|null: false|
+|image|string|null: false|
 
 ### Association
 - belongs_to :item
