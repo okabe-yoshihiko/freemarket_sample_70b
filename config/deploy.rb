@@ -32,15 +32,23 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  desc 'upload secrets.yml'
-  task :upload do
-    on roles(:app) do |host|
-      if test "[ ! -d #{shared_path}/config ]"
-        execute "mkdir -p #{shared_path}/config"
-      end
-      upload!('config/credentials.yml', "#{shared_path}/config/credentials.yml")
-    end
-  end
-  before :starting, 'deploy:upload'
-  after :finishing, 'deploy:cleanup'
+  desc 'upload master.key'
+ task :upload do
+   on roles(:app) do |host|
+     if test "[ ! -d #{shared_path}/config ]"
+       execute "mkdir -p #{shared_path}/config"
+     end
+     upload!('config/master.key', "#{shared_path}/config/master.key")
+   end
+ end
+ before :starting, 'deploy:upload'
+ after :finishing, 'deploy:cleanup'
 end
+
+# 必要に応じて/環境変数をcapistranoでの自動デプロイで利用
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
