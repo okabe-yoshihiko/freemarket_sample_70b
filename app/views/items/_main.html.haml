@@ -89,107 +89,56 @@
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
     
   %section.main__pickup
-    -# 5個目のブロック
-    %h2.main__pickup__subtitle
+    %h2.pickup__title
       ピックアップカテゴリー
-    .main__pickup__box
-      .main__pickup__box--head
+    .pickup__box
+      .pickup__box--head
         = link_to "/" do
-          %h3.title
+          %h3.subtitle
             新規投稿商品
-      .main__pickup__box--lists
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬1
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    500000円
-                  %li.price__comment
+      .pickup__box--lists
+        - @item.each do |item|
+          = link_to item_path(item) ,class: "itemlink" do
+            %figure.pickup__item--img
+              = image_tag item.item_images[0].image.url, class: "pick-img"
+            .pickup__item--content
+              = item.name
+              .pickup-detail
+                %ul.detail
+                  %li.price
+                    = item.price
+                    円
+                    %p (税込)
+                  %li.favorite
                     %i.fa.fa-star.LikeIcon
                     0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬2
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000000円
-                  %li.price__comment
+
+  %section.main__pickup
+    %h2.pickup__title
+      ピックアップブランド
+    .pickup__box
+      .pickup__box--head
+        = link_to "/" do
+          %h3.subtitle
+            アーカイバ
+      .pickup__box--lists
+        - @item.each do |item|
+          = link_to item_path(item) ,class: "itemlink" do
+            %figure.pickup__item--img
+              = image_tag item.item_images[0].image.url, class: "pick-img"
+            .pickup__item--content
+              = item.name
+              .pickup-detail
+                %ul.detail
+                  %li.price
+                    = item.price
+                    円
+                    %p (税込)
+                  %li.favorite
                     %i.fa.fa-star.LikeIcon
                     0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬3
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000000円
-                  %li.price__comment
-                    
-                    %i.fa.fa-star.LikeIcon
-                    0
-      .main__pickup__box--lists
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬4
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000000円
-                  %li.price__comment
-                    
-                    %i.fa.fa-star.LikeIcon
-                    0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬5
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    3000円
-                  %li.price__comment
-                    
-                    %i.fa.fa-star.LikeIcon
-                    0
-        .main__pickup__box--lists__box
-          = link_to "/items/show" do
-            %figure.main__pickup__box--lists__box--img
-              = image_tag '3636080364_b17bcb3eb5.smple.jpg', height:'220px', width:'220px'
-            .main__pickup__box--lists__box__body
-              %h3.name
-                犬6
-              .price
-                %ul.price__comment
-                  %li.price__comment
-                    %p 300円
-                  %li.price__comment
-                    %i.fa.fa-star.LikeIcon
-                    0
-                    
 
   %section.main__visual3
-    -# 6個目ブロック
     .main__visual3-content
       %h2.main__visual3-content__sub
         だれでもかんたん、人生を変えるフリマアプリ
@@ -200,4 +149,3 @@
           = image_tag 'btn_appstore_01.png', height:'68px',class:'appimage'
         = link_to "/" do
           = image_tag 'badge-google-play.png', height:'100px'
-          
