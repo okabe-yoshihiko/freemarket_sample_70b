@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
   before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done]
-  before_action :move_to_session, except: [:index, :show]
+  before_action :move_to_session, except: [:index]
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
