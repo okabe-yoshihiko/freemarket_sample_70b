@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :postage
   belongs_to_active_hash :day
-  has_many :item_images ,inverse_of: :item
+  has_many :item_images, inverse_of: :item, dependent: :destroy
   accepts_nested_attributes_for :item_images,allow_destroy: true
   validates :item_images, presence: true
   validates :name,              presence: true, length: { maximum: 40 }

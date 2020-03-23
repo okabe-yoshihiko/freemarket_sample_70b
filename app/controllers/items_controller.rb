@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
   before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done]
-  before_action :move_to_session, except: [:index, :show]
+  before_action :move_to_session, except: [:index]
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
-    @item.update(seller_id: current_user.id)
+    @item.update(buyer_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
   end
 
@@ -54,6 +54,13 @@ class ItemsController < ApplicationController
       redirect_to new_item_path
     end
   end
+
+  def edit
+  end
+
+  def update
+  end
+
 
   def category_children  
     @category_children = Category.find(params[:productcategory]).children 
