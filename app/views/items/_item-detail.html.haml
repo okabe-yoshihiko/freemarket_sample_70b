@@ -4,17 +4,14 @@
     .item-box__content
       .content-area
         .content-area__main
-          = image_tag "freema images.jpeg", class: "show-item__main", size: "550x350"
+          = image_tag @item.item_images[0].image.url, class: "show-item__main", size: "550x350"
           -if @item.buyer_id.present?
             .show-item__main__sold
               .show-item__main__sold__inner SOLD
         %ul.item-img
-          %li.item-subimg
-            = image_tag "freema2.jpeg", size: "150x110"
-          %li.item-subimg
-            = image_tag "satou.jpeg", size: "150x110"
-          %li.item-subimg
-            = image_tag "zyuu.jpeg", size: "150x110"
+          - @item.item_images.each do |i|
+            %li.item-subimg
+              = image_tag i.image.url, size: "150x110"
     .item-box__price
       .item-box__price__int
         ¥
@@ -39,30 +36,30 @@
           %tr
             %th カテゴリー
             %td
-              = link_to "ホビー", "#", class: "detail-link"
+              = link_to @category.parent.parent.name, "#", class: "detail-link"
               %br/
-              = link_to "(男女兼用)", "#", class: "detail-link"
+              = link_to @category.parent.name, "#", class: "detail-link"
               %br/
-              = link_to "", "#", class: "detail-link"
+              = link_to @category.name, "#", class: "detail-link"
           %tr
             %th ブランド
-            %td アウトレイジ
+            %td= @item.brand
           %tr
             %th 商品のサイズ
-            %td 大きめ
+            %td= @item.size
           %tr
             %th 商品の状態
-            %td 未使用に近い
+            %td= @item.condition
           %tr
             %th 配送料の負担
-            %td 送料込み（出品者負担）
+            %td=@item.postage.name
           %tr
             %th 発送元の地域
             %td
-              = link_to "京都府", "#", class: "detail-link"
+              = link_to @item.prefecture.name, "#", class: "detail-link"
           %tr
             %th 発送日の目安
-            %td 4-7日で発送
+            %td= @item.day.name
     .item-box__options
       %button{type: "submit", class:'like-btn'}
         = icon('fas', 'star', class: 'detail-icon')
