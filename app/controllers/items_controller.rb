@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
-    @item.update(seller_id: current_user.id)
+    @item.update(buyer_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
   end
 
