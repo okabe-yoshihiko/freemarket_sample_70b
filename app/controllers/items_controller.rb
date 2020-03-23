@@ -1,23 +1,28 @@
 class ItemsController < ApplicationController
   require 'payjp'
+  before_action :item_params, only: [:show, :destroy, :confirm, :pay, :done]
   before_action :move_to_session, except: [:index, :show]
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
-    @items = Item.all
+    @item = Item.all
   end
 
   def show
-    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to user_path(current_user)
+    else
+      redirect_to action: 'fail'
+    end 
   end
 
   def confirm
-    @item = Item.find(params[:id])
   end
 
   def pay
-    @item = Item.find(params[:id])
-
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
       amount: @item.price, 
@@ -29,7 +34,9 @@ class ItemsController < ApplicationController
   end
 
   def done
-    @item = Item.find(params[:id])
+  end
+
+  def fail
   end
 
   def new
@@ -45,7 +52,12 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
+
   private
+  def item_params
+    @item = Item.find(params[:id])
+  end
+
   def move_to_session
     redirect_to "/users/sign_in" unless user_signed_in?
   end
