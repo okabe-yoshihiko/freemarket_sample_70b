@@ -23,12 +23,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_032118) do
     t.string "address", null: false
     t.string "building"
     t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.integer "prefecture", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,14 +52,21 @@ ActiveRecord::Schema.define(version: 2020_03_18_032118) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
     t.text "detail", null: false
+    t.string "name", null: false
     t.integer "price", null: false
-    t.integer "seller_id"
+    t.integer "seller_id", null: false
     t.integer "buyer_id"
-    t.string "customer_id", null: false
+    t.integer "category_id", null: false
+    t.string "condition", null: false
+    t.string "size"
+    t.string "brand"
+    t.string "prefecture_id", null: false
+    t.string "postage_id", null: false
+    t.integer "day_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_items_on_name"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
