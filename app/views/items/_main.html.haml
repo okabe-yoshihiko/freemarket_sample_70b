@@ -100,7 +100,7 @@
         - @item.each do |item|
           = link_to item_path(item) ,class: "itemlink" do
             %figure.pickup__item--img
-              = image_tag item.item_images[0].image.url, class: "pick-img"
+              = image_tag '/uploads/item_image/image/', class: "pick-img"
             .pickup__item--content
               = item.name
               .pickup-detail
@@ -125,7 +125,7 @@
         - @item.each do |item|
           = link_to item_path(item) ,class: "itemlink" do
             %figure.pickup__item--img
-              = image_tag item.item_images[0].image.url, class: "pick-img"
+              = image_tag item.item_images.to_s.url, class: "pick-img"
             .pickup__item--content
               = item.name
               .pickup-detail
