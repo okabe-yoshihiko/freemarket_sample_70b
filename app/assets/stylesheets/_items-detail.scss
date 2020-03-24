@@ -11,7 +11,6 @@
     background-color: #ffffff;
     padding: 24px 40px 40px;
     width: 700px;
-    height: 1450px;
     margin: 0 auto;
     &__name {
       text-align: center;
@@ -26,6 +25,7 @@
           justify-content: center;
           .show-item__main {
             align-items: center;
+            object-fit: contain;
             &__sold{
               width: 0;
               height: 0;
@@ -54,9 +54,15 @@
         ul.item-img {
           display: flex;
           justify-content: center;
+          flex-direction: row;
+          flex-wrap: wrap;
           margin-top: 10px;
           li.item-subimg {
             margin: 0px 5px;
+            img{
+              object-fit: contain; 
+              width:auto;
+            }
           }
         }
       }
@@ -74,6 +80,18 @@
     }
     .item-delete__btn {
       background-color: red;
+      color: #ffffff;
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 60px;
+      text-decoration: none;
+    }
+    .item-delete__btn2 {
+      background-color: gray;
       color: #ffffff;
       display: block;
       margin-top: 16px;
@@ -208,3 +226,4 @@
     }
   }
 }
+
