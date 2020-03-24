@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def show
     @category = Category.find(@item.category_id)
+    
   end
 
   def destroy
