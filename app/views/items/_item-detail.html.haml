@@ -4,7 +4,8 @@
     .item-box__content
       .content-area
         .content-area__main
-          = image_tag @item.item_images[0].image.url, class: "show-item__main"
+          .content-area__main__image
+            = image_tag @item.item_images[0].image.url, class: "show-item__main"
           -if @item.buyer_id.present?
             .show-item__main__sold
               .show-item__main__sold__inner SOLD
