@@ -49,11 +49,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @category = Category.where(ancestry: nil).limit(13)
     if  @item.save
       redirect_to root_path
     else
-      flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      redirect_to new_item_path
+      render action: :new
     end
   end
 

@@ -7,6 +7,12 @@ body {
       width: 700px;
       margin: 0 auto;
       background-color: #fff;
+      &__messages{
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+      }
       &__header h2 {
         text-align: center;
         line-height: 1.5;
