@@ -22,6 +22,9 @@
       justify-content: center;
       &__view {
         position: relative;
+        .confirm-item__img{
+          max-width: 300px;
+        }
         &__sold{
           width: 0;
           height: 0;
@@ -95,7 +98,7 @@
       }
     }
   }
-  .pay-btn{
+  input{
     width: 500px;
     height: 50px;
     font-size: 20px;
