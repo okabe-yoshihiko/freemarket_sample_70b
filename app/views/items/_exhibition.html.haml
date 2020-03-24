@@ -1,7 +1,9 @@
 %main
   .main-content
     .mainContainer
-      =render "layouts/flash"
+      - if @item.errors.any?
+        .mainContainer__messages
+          ＊入力した内容にエラーがあります＊
       .mainContainer__header
         %h2 商品の情報を入力
       %form
