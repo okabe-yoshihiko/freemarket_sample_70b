@@ -17,17 +17,16 @@
                 %p 最大10枚までアップロードできます
             .contents-image
               .contents__main__image__box
-                .contents__main__image__box
-                  .contents__main__image__box__previews
-                  .contents__main__image__box__uploader
-                    %label.contents__main__image__box__uploader__label<>
-                      = f.fields_for :item_images do |image|
-                        .js-file_group{"data-index" => "#{image.index}"}
-                          = image.file_field :image, class: 'js-file'
-                      .contents__main__image__box__uploader__text
-                        %p クリックしてファイルをアップロード
-                        .contents__main__image__box__uploader__text__icon
-                          %i.fas.fa-camera 
+                .contents__main__image__box__previews
+                .contents__main__image__box__uploader
+                  %label.contents__main__image__box__uploader__label<>
+                    = f.fields_for :item_images do |image|
+                      .js-file_group{"data-index" => "#{image.index}"}
+                        = image.file_field :image, class: 'js-file'
+                    .contents__main__image__box__uploader__text
+                      %p クリックしてファイルをアップロード
+                      .contents__main__image__box__uploader__text__icon
+                        %i.fas.fa-camera 
         .mainContainer__form--name
           .name
             =f.label "商品名"
