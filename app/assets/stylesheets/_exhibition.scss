@@ -23,8 +23,8 @@ body {
         font-size: 22px;
       }
       &__form {
+        align-items: center;
         &--image {
-          width: 620px;
           padding: 40px;
           &:after {
             content: '';
@@ -92,7 +92,7 @@ body {
                   margin-top: 5px;
                   display: flex;
                   &__previews {
-                    width: 620px;
+                    display: flex;
                     height: 162px;
                     max-width: 620px;
                     &__preview {
