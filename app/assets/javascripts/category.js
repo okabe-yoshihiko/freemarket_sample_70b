@@ -35,7 +35,7 @@ $(function(){
     var productcategory = document.getElementById('category_select').value; 
     if (productcategory != ''){
       $.ajax({
-        url: 'category_children',
+        url: '/items/category_children',
         type: 'GET',
         data: { productcategory: productcategory },
         dataType: 'json'
@@ -61,7 +61,7 @@ $(function(){
     var productcategory = document.getElementById('child_category').value;
     if (productcategory != ''){
     $.ajax ({
-      url: 'category_grandchildren',
+      url: '/items/category_grandchildren',
       type: 'GET',
       data: { productcategory: productcategory },
       dataType: 'json'
