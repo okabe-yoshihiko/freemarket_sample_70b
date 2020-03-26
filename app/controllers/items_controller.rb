@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
-  before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done]
-  before_action :move_to_session, except: [:index]
+  before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done,:edit,:update]
+  before_action :move_to_session, except: [:index, :search]
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
@@ -57,6 +57,20 @@ class ItemsController < ApplicationController
     end
   end
 
+    def edit
+    @category = Category.where(ancestry: nil).limit(13)
+    @selected_category = Category.find(@item.category_id)
+    end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
+  end
+
+  
   def category_children  
     @category_children = Category.find(params[:productcategory]).children 
   end
@@ -66,6 +80,10 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
 
   private
   def item_set
@@ -83,5 +101,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :detail, :price,:category_id, :brand,:size,:day_id,:postage_id,:prefecture_id,:condition,item_images_attributes:[:id, :image, :_destroy]).merge(seller_id: current_user.id)
   end
+
 
 end

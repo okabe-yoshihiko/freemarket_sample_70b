@@ -5,13 +5,9 @@
         = link_to "/" do
           = image_tag 'logo.png', height:'40px', width:'140px'
       .header__box-main__searchBox
-        %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
-          %input{name: "utf8", type: "hidden", value: "✓"}/
-          %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す",height: "36px",width: "575px"}/
-          %button{type: "submit"}
-            .searchBox__icon
-              = image_tag 'icon-search 1.png', height:'20px', width:'20px'
-  
+        = form_with(url: search_items_path, local: true, method: :get, class: "form") do |form|
+          = form.text_field :keyword, placeholder: "キーワードから探す", class: "searchBox--input"
+          = form.submit "", class: "button"
     .header__box-bottom
       %ul.listsleft
         %li.listsleft__item--first

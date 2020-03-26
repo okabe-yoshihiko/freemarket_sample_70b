@@ -8,23 +8,23 @@
           .buy-item__view__sold
             .buy-item__view__sold__inner SOLD
       .buy-item__detail
-        .buy-item__detail__name= @item.name
-        .buy-item__detail__price 
-        支払金額　
-        ¥
+        .buy-item__detail__name 
+          =@item.name
+        .buy-item__detail__price
+        %p 支払い金額
         =@item.price
-        .buy-item__detail__tax (税込) 送料込
+        円
+        .buy-item__detail__tax 
+          =@item.postage.name
     .item-derivery
-      .item-derivery__price 
-      お支払い総額 
-      ¥
-      =@item.price
+      .item-derivery__price お支払い総額 :¥125000
       .item-derivery__city
-      配送地域 :
-      =@item.prefecture.name
+        %p 配送地域
+        =@item.prefecture.name
     .pay-area
       -if @item.buyer_id.present? 
         = link_to "売り切れました",item_path(@item),class:"disabled-button bold"
       -else
         = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{"data-key": "pk_test_fa10e19dd56e04cd7b4b7ae3", src: "https://checkout.pay.jp", type: "text/javascript"}
+          .pay-btn
+            %script{"data-key": "pk_test_fa10e19dd56e04cd7b4b7ae3", src: "https://checkout.pay.jp", type: "text/javascript", class: "payjp-button"}

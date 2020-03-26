@@ -8,13 +8,14 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
-  resources :items, only: [:index, :show, :new,:create,:destroy]do
+  resources :items do
     collection do
       post 'pay/:id', to: 'items#pay'
       get 'done/:id', to: 'items#done'
       get 'fail/:id', to: 'items#fail'
       get 'category_children' 
       get 'category_grandchildren'
+      get 'search'
     end
     member do
       get 'confirm', to: 'items#confirm'
