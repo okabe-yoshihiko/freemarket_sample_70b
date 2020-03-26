@@ -1,0 +1,26 @@
+%section.main__pickup
+  %h2.pickup__title
+    検索結果
+  .pickup__box
+    .pickup__box--lists
+      - @items.each do |item|
+        = link_to item_path(item) ,class: "itemlink" do
+          %figure.pickup__item--img
+            = image_tag item.item_images[0].image.url, class: "pick-img"
+          .pickup__item--content
+            = item.name
+            .pickup-detail
+              %ul.detail
+                %li.price
+                  = item.price
+                  円
+                  %p (税込)
+                %li.favorite
+                  %i.fa.fa-star.LikeIcon
+                  0
+
+= link_to new_item_path do
+  .Exhibitionbtn
+    %span.Exhibitionbtn__text 出品する
+    = image_tag 'icon_camera.png', height:'54px', width:'54px'
+

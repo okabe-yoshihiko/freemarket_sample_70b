@@ -1,4 +1,12 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥50(送料込み)
-= link_to "戻る", item_path(@item), class: 'btn btn-default'
+.donemain
+  %h2 購入が完了しました！
+  %p.item-name
+    = @item.name
+    ¥
+    = @item.price
+  %p
+    (送料込み)
+
+  %h3 購入した商品はマイページからご確認いただけます
+  %p.back
+    = link_to "戻る", item_path(@item), class: 'btn btn-default'

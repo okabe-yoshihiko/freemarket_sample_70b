@@ -26,4 +26,5 @@
         = link_to "売り切れました",item_path(@item),class:"disabled-button bold"
       -else
         = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{"data-key": "pk_test_fa10e19dd56e04cd7b4b7ae3", src: "https://checkout.pay.jp", type: "text/javascript"}
+          .pay-btn
+            %script{"data-key": "pk_test_fa10e19dd56e04cd7b4b7ae3", src: "https://checkout.pay.jp", type: "text/javascript", class: "payjp-button"}
