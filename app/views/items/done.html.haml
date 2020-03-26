@@ -1,12 +1,10 @@
-.donemain
+.bbox 
   %h2 購入が完了しました！
-  %p.item-name
-    = @item.name
-    ¥
-    = @item.price
-  %p
-    (送料込み)
-
-  %h3 購入した商品はマイページからご確認いただけます
-  %p.back
-    = link_to "戻る", item_path(@item), class: 'btn btn-default'
+.bbox2
+  .image2
+    = image_tag @item.item_images[0].image.url, class: "show-item__main", size: "200x300"
+  .item2
+    .item2_name= @item.name
+    .item2_price="¥#{@item.price}"
+.bbtn
+  = link_to "戻る", item_path(@item), class: 'btnbtn-default'
