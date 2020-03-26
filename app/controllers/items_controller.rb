@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
   before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done]
-  before_action :move_to_session, except: [:index]
+  before_action :move_to_session, except: [:index, :search]
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
@@ -65,6 +65,10 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
 
   private
   def item_set

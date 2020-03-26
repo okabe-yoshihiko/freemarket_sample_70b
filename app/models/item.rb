@@ -12,4 +12,10 @@ class Item < ApplicationRecord
   validates :name,              presence: true, length: { maximum: 40 }
   validates :detail, presence: true, length: { maximum: 1000}
   validates :price,presence: true,numericality: {only_integer: true,greater_than: 299, less_than: 10000000}
+
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end
