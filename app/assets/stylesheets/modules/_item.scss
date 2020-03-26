@@ -291,6 +291,27 @@
               height: 150px;
               object-fit: contain;
             }
+            &__sold{
+              width: 0;
+              height: 0;
+              border-width: 100px 100px 0 0;
+              border-color: #ea352d transparent transparent transparent;
+              display: block;
+              position: absolute;
+              z-index: 1;
+              border-style: solid;
+              &__inner{
+                top: -75px;
+                font-size: 13px;
+                position: absolute;
+                left: 5px;
+                z-index: 2;
+                color: white;
+                transform: rotate(-45deg);
+                letter-spacing: 2px;
+                font-weight: 600;
+              }
+            }
           }
           .pickup__item--content{
             background-color: white;
@@ -407,3 +428,4 @@
   }
   }
 }
+
