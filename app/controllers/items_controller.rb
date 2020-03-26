@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   before_action :card_registration, only: [:confirm, :pay]
 
   def index
-    @item = Item.includes(:item_images).where(buyer_id: nil).order(created_at: :desc).limit(5)
+    @item = Item.order(created_at: :desc).limit(5)
   end
 
   def show

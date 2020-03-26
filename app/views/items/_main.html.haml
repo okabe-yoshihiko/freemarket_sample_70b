@@ -99,6 +99,9 @@
       .pickup__box--lists
         - @item.each do |item|
           = link_to item_path(item) ,class: "itemlink" do
+            -if item.buyer_id.present?
+              .pickup__item--img__sold
+                .pickup__item--img__sold__inner SOLD
             %figure.pickup__item--img
               = image_tag item.item_images[0].image.url, class: "pick-img"
             .pickup__item--content
@@ -124,6 +127,9 @@
       .pickup__box--lists
         - @item.each do |item|
           = link_to item_path(item) ,class: "itemlink" do
+            -if item.buyer_id.present?
+              .pickup__item--img__sold
+                .pickup__item--img__sold__inner SOLD
             %figure.pickup__item--img
               = image_tag item.item_images[0].image.url, class: "pick-img"
             .pickup__item--content
