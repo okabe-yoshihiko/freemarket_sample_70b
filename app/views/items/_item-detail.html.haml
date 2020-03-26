@@ -4,7 +4,8 @@
     .item-box__content
       .content-area
         .content-area__main
-          = image_tag @item.item_images[0].image.url, class: "show-item__main", size: "550x350"
+          .content-area__main__image
+            = image_tag @item.item_images[0].image.url, class: "show-item__main"
           -if @item.buyer_id.present?
             .show-item__main__sold
               .show-item__main__sold__inner SOLD
@@ -20,7 +21,7 @@
   
     - if current_user.id == @item.seller_id
       = link_to "出品した商品情報を削除する", item_path(@item), method: :delete, class: "item-delete__btn"
-      = link_to "出品した商品情報を編集する","#",class: "item-delete__btn"
+      = link_to "出品した商品情報を編集する",edit_item_path(@item),class: "item-delete__btn2"
     - elsif @item.buyer_id.present?
       = link_to "売り切れました", "/", class: "disabled-button bold"
     - else

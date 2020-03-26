@@ -2,8 +2,9 @@ body{
   background-color: #f8f8f8;
 }
 .mypage{
-  padding: 10px 150px 150px 150px;
+  padding:20px 150px 150px;
   display: flex;
+  justify-content: center;
   &__side{
     height: 100vh;
     width: 300px;
@@ -11,6 +12,7 @@ body{
     .pages{
       list-style: none;
       margin-bottom: 1px;
+      width: 200px;
     }
    
    .mypagelink{

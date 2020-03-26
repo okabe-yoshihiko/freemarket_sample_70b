@@ -64,7 +64,6 @@
               .error= message
         .field
           = f.label :お届け先の電話番号
-          %span 必須
           %br/
           = f.text_field :tel_number, autofocus: true, autocomplete: "tel_number",placeholder: " 例）09012345678（ハイフン無し）"
           - if @address.errors.any?
