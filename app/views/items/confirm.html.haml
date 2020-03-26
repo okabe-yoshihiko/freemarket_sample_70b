@@ -3,18 +3,25 @@
     .confirm-box__header 購入内容の確認
     .buy-item
       .buy-item__view
-        = image_tag "harv.jpeg", class: "confirm-item__img", size: "300x250"
+        = image_tag @item.item_images[0].image.url, class: "confirm-item__img"
         -if @item.buyer_id.present?
           .buy-item__view__sold
             .buy-item__view__sold__inner SOLD
       .buy-item__detail
-        .buy-item__detail__name 心安らぐハーブ
-        .buy-item__detail__price 支払金額　¥125000
-        = @item.price
+        .buy-item__detail__name= @item.name
+        .buy-item__detail__price 
+        支払金額　
+        ¥
+        =@item.price
         .buy-item__detail__tax (税込) 送料込
     .item-derivery
-      .item-derivery__price お支払い総額 :¥125000
-      .item-derivery__city 配送地域 :愛知県
+      .item-derivery__price 
+      お支払い総額 
+      ¥
+      =@item.price
+      .item-derivery__city
+      配送地域 :
+      =@item.prefecture.name
     .pay-area
       -if @item.buyer_id.present? 
         = link_to "売り切れました",item_path(@item),class:"disabled-button bold"
