@@ -79,10 +79,6 @@ $(document).ready(function() {
           break;
         case 1:
           $('.contents__main__image__box__previews').css({
-            'display':'grid',
-            'grid-template-rows':'repeat(1, 165px)',
-            'grid-template-columns':'repeat(1, 120px)',
-            'width':'120px'
           });
           $('.contents__main__image__box__uploader').css({
             'width':'400%',
