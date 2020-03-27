@@ -17,7 +17,9 @@
         .buy-item__detail__tax 
           =@item.postage.name
     .item-derivery
-      .item-derivery__price お支払い総額 :¥125000
+      .item-derivery__price 
+        %p お支払い総額 :
+        ="¥#{@item.price}"
       .item-derivery__city
         %p 配送地域
         =@item.prefecture.name
