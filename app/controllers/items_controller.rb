@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :item_set, only: [:show, :destroy, :confirm, :pay, :done,:edit,:update]
   before_action :move_to_session, except: [:index, :search]
   before_action :card_registration, only: [:confirm, :pay]
-
+  protect_from_forgery :except => [:pay]
   def index
     @item = Item.order(created_at: :desc).limit(5)
   end
