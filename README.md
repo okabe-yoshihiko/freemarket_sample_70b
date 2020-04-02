@@ -1,5 +1,4 @@
 # free-market DB設計
-#fork.N
 
 ## usersテーブル
 |Column|Type|Options|
